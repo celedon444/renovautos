@@ -1,0 +1,418 @@
+// prisma/schema.prisma
+// Taller Junior — Santa Marta, Colombia
+// Next.js 14+ | PostgreSQL | Prisma ORM
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─────────────────────────────────────────────
+// ENUMERACIONES
+// ─────────────────────────────────────────────
+
+enum WorkOrderStatus {
+  PENDING_INTAKE    // Creada, vehículo no ha llegado
+  RECEIVED          // Vehículo recibido en el taller
+  DIAGNOSING        // En diagnóstico
+  QUOTE_SENT        // Cotización enviada al cliente
+  AWAITING_APPROVAL // Esperando aprobación del cliente
+  APPROVED          // Cliente aprobó el presupuesto
+  IN_REPAIR         // En reparación activa
+  QUALITY_CHECK     // Revisión de calidad final
+  READY             // Listo para entrega
+  DELIVERED         // Entregado y pagado
+  CANCELLED         // Cancelado
+}
+
+enum PaymentStatus {
+  UNPAID
+  PARTIAL
+  PAID
+}
+
+enum PaymentMethod {
+  CASH          // Efectivo
+  TRANSFER      // Transferencia bancaria (Nequi, Daviplata, etc.)
+  CARD          // Tarjeta débito/crédito
+  MIXED         // Combinación de métodos
+}
+
+enum OrderItemType {
+  PART   // Repuesto / pieza
+  LABOR  // Mano de obra
+  OTHER  // Otros cargos
+}
+
+enum PhotoStage {
+  INTAKE      // Fotos de ingreso (rayones, golpes)
+  DIAGNOSIS   // Fotos de piezas dañadas / diagnóstico
+  IN_PROGRESS // Durante la reparación
+  COMPLETED   // Fotos de trabajo terminado
+}
+
+enum ExpenseCategory {
+  PARTS       // Compra de repuestos/insumos
+  TOOLS       // Herramientas y equipos
+  RENT        // Arriendo del local
+  UTILITIES   // Servicios públicos (agua, luz, internet)
+  SALARY      // Pago ayudantes / mano de obra externa
+  TRANSPORT   // Combustible, mensajería
+  MARKETING   // Publicidad, redes sociales
+  OTHER       // Otros gastos operativos
+}
+
+enum AppointmentStatus {
+  PENDING    // Recién enviada desde la web
+  CONFIRMED  // Confirmada por el taller
+  ARRIVED    // Cliente llegó → se creó la orden
+  CANCELLED  // Cancelada
+  NO_SHOW    // No se presentó
+}
+
+enum FuelLevel {
+  EMPTY
+  QUARTER
+  HALF
+  THREE_QUARTERS
+  FULL
+}
+
+// ─────────────────────────────────────────────
+// USUARIO / CONFIGURACIÓN DEL TALLER
+// (Monousuario: el dueño/mecánico)
+// ─────────────────────────────────────────────
+
+model User {
+  id              String   @id @default(cuid())
+  email           String   @unique
+  name            String
+  passwordHash    String
+  role            String   @default("ADMIN")
+
+  // Datos del taller (configuración de marca)
+  workshopName    String   @default("Taller Junior")
+  workshopCity    String   @default("Santa Marta")
+  workshopAddress String?
+  workshopPhone   String?
+  whatsappNumber  String?  // Formato internacional: 573001234567
+  logoUrl         String?
+  nit             String?  // NIT o CC del taller para facturas
+  bankInfo        String?  // Info bancaria para pie de recibo (texto libre)
+  invoiceFooter   String?  // Texto personalizado al pie de cotizaciones/recibos
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("users")
+}
+
+// ─────────────────────────────────────────────
+// CLIENTES
+// ─────────────────────────────────────────────
+
+model Customer {
+  id          String    @id @default(cuid())
+  name        String
+  phone       String    // Número principal (WhatsApp)
+  email       String?
+  cedula      String?   // Cédula de ciudadanía (opcional)
+  address     String?
+  notes       String?   // Notas internas del mecánico sobre el cliente
+
+  vehicles    Vehicle[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([phone])
+  @@index([name])
+  @@map("customers")
+}
+
+// ─────────────────────────────────────────────
+// VEHÍCULOS
+// ─────────────────────────────────────────────
+
+model Vehicle {
+  id              String      @id @default(cuid())
+  plate           String      @unique // Placa: identificador principal (ej. ABC-123)
+  brand           String      // Marca (Toyota, Chevrolet, Renault...)
+  model           String      // Modelo (Corolla, Spark, Logan...)
+  year            Int
+  color           String?
+  vin             String?     // Número de chasis/VIN
+  engineType      String?     // Tipo de motor (1.4L, 2.0L, Diesel...)
+  transmission    String?     // Manual / Automática / CVT
+  oilType         String?     // Tipo de aceite recomendado (ej. 5W-30 Sintético)
+  oilCapacityLts  Float?      // Capacidad en litros
+  notes           String?     // Notas técnicas permanentes del vehículo
+
+  customerId      String
+  customer        Customer    @relation(fields: [customerId], references: [id], onDelete: Restrict)
+
+  workOrders      WorkOrder[]
+
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([plate])
+  @@index([customerId])
+  @@map("vehicles")
+}
+
+// ─────────────────────────────────────────────
+// ÓRDENES DE TRABAJO (Core del sistema)
+// ─────────────────────────────────────────────
+
+model WorkOrder {
+  id              String          @id @default(cuid())
+  orderNumber     String          @unique // Correlativo: TJ-2024-001
+  publicToken     String          @unique // Token para link público: /estado/[token]
+
+  status          WorkOrderStatus @default(RECEIVED)
+  paymentStatus   PaymentStatus   @default(UNPAID)
+  paymentMethod   PaymentMethod?
+
+  // Datos de ingreso del vehículo
+  mileageIn       Int?            // Kilometraje al entrar
+  mileageOut      Int?            // Kilometraje al salir
+  fuelLevel       FuelLevel?      // Nivel de combustible al ingreso
+
+  // Información técnica
+  symptoms        String          // Descripción de falla reportada por el cliente
+  diagnosis       String?         // Diagnóstico técnico del mecánico
+  mechanicNotes   String?         // Notas internas (no visibles al cliente)
+  workDone        String?         // Descripción del trabajo realizado (visible al cliente)
+
+  // Montos (en COP - Pesos colombianos)
+  subtotalParts   Float           @default(0) // Suma unitPrice de PARTS
+  subtotalLabor   Float           @default(0) // Suma unitPrice de LABOR
+  discount        Float           @default(0) // Descuento manual
+  totalAmount     Float           @default(0) // Total a pagar por el cliente
+  totalCostParts  Float           @default(0) // Suma unitCost de PARTS (costo real)
+  paidAmount      Float           @default(0) // Monto pagado (soporta abonos)
+
+  // Timestamps operativos
+  estimatedReady  DateTime?       // Fecha/hora estimada de entrega prometida
+  completedAt     DateTime?       // Cuando se marcó como READY
+  deliveredAt     DateTime?       // Cuando se marcó como DELIVERED
+
+  // Relaciones
+  vehicleId       String
+  vehicle         Vehicle         @relation(fields: [vehicleId], references: [id], onDelete: Restrict)
+
+  items           OrderItem[]
+  photos          OrderPhoto[]
+  payments        Payment[]
+  expenses        Expense[]       // Gastos de repuestos directamente ligados
+
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@index([status])
+  @@index([paymentStatus])
+  @@index([vehicleId])
+  @@index([publicToken])
+  @@index([createdAt])
+  @@map("work_orders")
+}
+
+// ─────────────────────────────────────────────
+// ÍTEMS DE LA ORDEN (Repuestos y Mano de Obra)
+// ─────────────────────────────────────────────
+
+model OrderItem {
+  id          String        @id @default(cuid())
+  type        OrderItemType
+  description String
+  quantity    Float         @default(1)
+  unit        String?       // "unid", "lt", "hr" etc.
+
+  // Repuestos: diferencia entre costo de compra y precio al cliente
+  unitCost    Float         @default(0) // Lo que el mecánico pagó (solo para P&G)
+  unitPrice   Float         // Lo que se cobra al cliente
+
+  // Campos calculados (denormalizados para facilidad)
+  totalCost   Float         @default(0) // quantity * unitCost
+  totalPrice  Float         @default(0) // quantity * unitPrice
+  margin      Float         @default(0) // totalPrice - totalCost
+
+  partNumber  String?       // Número de parte/referencia (opcional)
+  brand       String?       // Marca del repuesto
+
+  workOrderId String
+  workOrder   WorkOrder     @relation(fields: [workOrderId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([workOrderId])
+  @@index([type])
+  @@map("order_items")
+}
+
+// ─────────────────────────────────────────────
+// FOTOS DE LA ORDEN
+// ─────────────────────────────────────────────
+
+model OrderPhoto {
+  id          String      @id @default(cuid())
+  url         String      // URL en Cloudinary / R2
+  publicId    String?     // ID de Cloudinary para borrado
+  stage       PhotoStage
+  caption     String?     // Descripción de la foto (ej. "Disco de freno desgastado")
+  sortOrder   Int         @default(0)
+
+  workOrderId String
+  workOrder   WorkOrder   @relation(fields: [workOrderId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime    @default(now())
+
+  @@index([workOrderId])
+  @@index([stage])
+  @@map("order_photos")
+}
+
+// ─────────────────────────────────────────────
+// PAGOS / ABONOS (soporte a pagos parciales)
+// ─────────────────────────────────────────────
+
+model Payment {
+  id            String        @id @default(cuid())
+  amount        Float
+  method        PaymentMethod
+  reference     String?       // Número de transferencia, comprobante, etc.
+  notes         String?
+
+  workOrderId   String
+  workOrder     WorkOrder     @relation(fields: [workOrderId], references: [id], onDelete: Cascade)
+
+  createdAt     DateTime      @default(now())
+
+  @@index([workOrderId])
+  @@map("payments")
+}
+
+// ─────────────────────────────────────────────
+// GASTOS OPERATIVOS
+// ─────────────────────────────────────────────
+
+model Expense {
+  id            String          @id @default(cuid())
+  description   String
+  category      ExpenseCategory
+  amount        Float           // En COP
+  date          DateTime        @default(now())
+  receiptUrl    String?         // Foto del recibo (opcional)
+  notes         String?
+  vendor        String?         // Proveedor (ej. "Almacén El Repuesto")
+
+  // Opcional: ligar un gasto de repuesto a una orden específica
+  workOrderId   String?
+  workOrder     WorkOrder?      @relation(fields: [workOrderId], references: [id], onDelete: SetNull)
+
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@index([category])
+  @@index([date])
+  @@index([workOrderId])
+  @@map("expenses")
+}
+
+// ─────────────────────────────────────────────
+// CITAS / AGENDAMIENTO
+// ─────────────────────────────────────────────
+
+model Appointment {
+  id              String            @id @default(cuid())
+  status          AppointmentStatus @default(PENDING)
+
+  // Datos del cliente (pueden no existir aún en la BD)
+  customerName    String
+  customerPhone   String
+  customerEmail   String?
+
+  // Datos del vehículo (texto libre, pueden no estar registrados)
+  vehiclePlate    String?
+  vehicleBrand    String?
+  vehicleModel    String?
+  vehicleYear     Int?
+
+  // Detalles de la cita
+  serviceType     String            // Servicio solicitado
+  description     String?           // Descripción adicional del problema
+  preferredDate   DateTime          // Fecha/hora preferida
+  confirmedDate   DateTime?         // Fecha/hora confirmada por el taller
+
+  workOrderId     String?           // Se llena cuando se convierte en orden
+  notes           String?           // Notas internas del mecánico
+  source          String?           // "web_form" | "whatsapp" | "phone" | "walk_in"
+
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@index([status])
+  @@index([preferredDate])
+  @@index([customerPhone])
+  @@map("appointments")
+}
+
+// ─────────────────────────────────────────────
+// PORTAFOLIO (Galería Antes / Después)
+// ─────────────────────────────────────────────
+
+model PortfolioItem {
+  id              String    @id @default(cuid())
+  title           String    // Título del trabajo (ej. "Cambio de motor Toyota")
+  description     String?   // Descripción detallada
+  category        String?   // "Motor" | "Frenos" | "Suspensión" | "Carrocería"...
+  beforeImageUrl  String    // Foto "Antes"
+  afterImageUrl   String    // Foto "Después"
+  beforePublicId  String?   // Cloudinary ID
+  afterPublicId   String?   // Cloudinary ID
+  isPublished     Boolean   @default(false)
+  sortOrder       Int       @default(0) // Control de orden de aparición
+
+  workOrderId     String?
+
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([isPublished])
+  @@index([category])
+  @@map("portfolio_items")
+}
+
+// ─────────────────────────────────────────────
+// ALERTAS DE MANTENIMIENTO (Recordatorios)
+// ─────────────────────────────────────────────
+
+model MaintenanceReminder {
+  id              String    @id @default(cuid())
+  vehicleId       String
+  vehiclePlate    String    // Denormalizado para queries rápidas
+  customerName    String
+  customerPhone   String
+  serviceType     String    // "Cambio de aceite" | "Revisión general"
+  lastServiceDate DateTime
+  nextServiceDate DateTime  // Fecha calculada para el próximo servicio
+  mileageAtService Int?     // Km en el último servicio
+  intervalMonths  Int       @default(3) // Cada cuántos meses
+  intervalKm      Int?      // Intervalo en km (opcional)
+  sentAt          DateTime? // Cuándo se envió el último recordatorio
+  isSent          Boolean   @default(false)
+  notes           String?
+
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([nextServiceDate])
+  @@index([isSent])
+  @@index([vehicleId])
+  @@map("maintenance_reminders")
+}
