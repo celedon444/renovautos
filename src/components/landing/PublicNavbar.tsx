@@ -41,18 +41,18 @@ export default function PublicNavbar() {
             </span>
             <span className="hidden md:inline-flex items-center gap-1 text-steel-400">
               <MapPin suppressHydrationWarning className="h-3 w-3 text-steel-500" />
-              Calle Principal # 12-34, Santa Marta
+              Calle 156 #7-15, Santa Marta
             </span>
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="https://wa.me/573001234567?text=Hola%20Junior,%20quiero%20hacer%20una%20consulta%20mecánica"
+              href="https://wa.me/573025449422?text=Hola%20Kilmer,%20quiero%20hacer%20una%20consulta%20mecánica"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-green-400 transition-colors flex items-center gap-1.5 font-bold text-steel-200"
             >
               <WhatsAppIcon className="h-3.5 w-3.5 fill-[#25D366]" />
-              <span>WhatsApp: +57 300 123 4567</span>
+              <span>WhatsApp: +57 302 544 9422</span>
             </a>
             <span className="text-steel-600">|</span>
             <Link
@@ -206,14 +206,14 @@ export default function PublicNavbar() {
                 </Link>
 
                 <a
-                  href="https://wa.me/573001234567?text=Hola%20Junior,%20quiero%20hacer%20una%20consulta%20mecánica"
+                  href="https://wa.me/573025449422?text=Hola%20Kilmer,%20quiero%20hacer%20una%20consulta%20mecánica"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMenu}
                   className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#25D366]/15 border border-[#25D366]/40 py-3 text-xs font-bold text-[#25D366] hover:bg-[#25D366]/25 transition-colors"
                 >
                   <WhatsAppIcon className="h-4 w-4 fill-[#25D366]" />
-                  <span>Escribir al WhatsApp (+57 300 123 4567)</span>
+                  <span>Escribir al WhatsApp (+57 302 544 9422)</span>
                 </a>
 
                 <div className="text-center pt-1">

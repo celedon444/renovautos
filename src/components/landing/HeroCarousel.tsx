@@ -19,7 +19,7 @@ const SLIDES: Slide[] = [
     image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=80",
     badge: "Mecánica Automotriz",
     title: "Diagnóstico Certero y Cuidado Total",
-    subtitle: "Atención personalizada por Junior Celedón sin intermediarios",
+    subtitle: "Atención personalizada por Kilmer Primiento sin intermediarios",
     tag: "5 Años en Santa Marta",
   },
   {
@@ -129,7 +129,7 @@ export default function HeroCarousel() {
                 <Award suppressHydrationWarning className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
               <div>
-                <p className="text-xs font-black text-white">Junior Celedón</p>
+                <p className="text-xs font-black text-white">Kilmer Primiento</p>
                 <p className="text-[10px] sm:text-[11px] text-steel-400">Mecánico Titular & Propietario</p>
               </div>
             </div>

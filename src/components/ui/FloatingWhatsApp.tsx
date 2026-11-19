@@ -9,7 +9,7 @@ interface FloatingWhatsAppProps {
 }
 
 export default function FloatingWhatsApp({
-  phone = "573001234567",
+  phone = "573025449422",
   message = "¡Hola Taller Junior! Deseo hacer una consulta sobre la reparación o mantenimiento de mi vehículo en Santa Marta.",
 }: FloatingWhatsAppProps) {
   const url = buildWhatsAppLink(phone, message);

@@ -23,7 +23,7 @@ export default function AdminHeader() {
         </Link>
         <div className="flex items-center gap-2 text-xs text-steel-400 border-l border-surface-border pl-4">
           <Phone suppressHydrationWarning className="h-3.5 w-3.5 text-brand-400" />
-          <span>+57 300 123 4567</span>
+          <span>+57 302 544 9422</span>
         </div>
       </div>
     </header>

@@ -9,19 +9,25 @@ async function main() {
 
   const admin = await prisma.user.upsert({
     where: { email: adminEmail },
-    update: {},
+    update: {
+      name: "Kilmer Primiento",
+      workshopAddress: "Calle 156 #7-15, Santa Marta, Magdalena, Colombia",
+      workshopPhone: "+57 302 544 9422",
+      whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "573025449422",
+      bankInfo: "Nequi / Daviplata: 302 544 9422 | Bancolombia Ahorros: 123-456789-01",
+    },
     create: {
       email: adminEmail,
-      name: "Junior Celedón",
+      name: "Kilmer Primiento",
       passwordHash: hash,
       role: "ADMIN",
       workshopName: "Taller Junior",
       workshopCity: "Santa Marta",
-      workshopAddress: "Calle Principal # 12-34, Santa Marta, Magdalena",
-      workshopPhone: "+57 300 123 4567",
-      whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "573001234567",
+      workshopAddress: "Calle 156 #7-15, Santa Marta, Magdalena, Colombia",
+      workshopPhone: "+57 302 544 9422",
+      whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "573025449422",
       nit: "123456789-0",
-      bankInfo: "Nequi / Daviplata: 300 123 4567 | Bancolombia Ahorros: 123-456789-01",
+      bankInfo: "Nequi / Daviplata: 302 544 9422 | Bancolombia Ahorros: 123-456789-01",
       invoiceFooter: "Garantía de mano de obra: 30 días o 1.000 km. Repuestos según fabricante. ¡Gracias por confiar en Taller Junior!",
     },
   });

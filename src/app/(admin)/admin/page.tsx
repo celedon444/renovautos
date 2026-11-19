@@ -33,7 +33,7 @@ export default async function AdminDashboardPage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-surface-border pb-5">
         <div>
           <h1 className="text-2xl font-black text-white tracking-tight flex items-center gap-2">
-            <span>¡Hola, Junior!</span>
+            <span>¡Hola, Kilmer!</span>
             <span className="text-sm font-normal text-brand-400 border border-brand-500/20 bg-brand-500/10 px-2.5 py-0.5 rounded-full">
               Santa Marta
             </span>

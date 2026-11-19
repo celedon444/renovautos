@@ -162,7 +162,7 @@ export default function LandingPage() {
               </Link>
 
               <a
-                href="https://wa.me/573001234567?text=Hola%20Junior,%20quiero%20hacer%20una%20consulta%20mecánica%20para%20mi%20vehículo"
+                href="https://wa.me/573025449422?text=Hola%20Kilmer,%20quiero%20hacer%20una%20consulta%20mecánica%20para%20mi%20vehículo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2.5 rounded-2xl border border-[#25D366]/40 bg-[#25D366]/10 px-6 py-4 text-sm font-bold text-[#4ade80] shadow-lg transition-all hover:bg-[#25D366]/20 active:scale-95"
@@ -467,7 +467,7 @@ export default function LandingPage() {
               {
                 icon: Zap, color: "orange",
                 title: "Mecánico Dueño Dedicado",
-                desc: "Sin aprendices. Junior Celedón interviene personalmente cada vehículo con 5 años de experiencia.",
+                desc: "Sin aprendices. Kilmer Primiento interviene personalmente cada vehículo con 5 años de experiencia.",
               },
             ].map((p, i) => {
               const Icon = p.icon;
@@ -585,7 +585,7 @@ export default function LandingPage() {
             </Link>
 
             <a
-              href="https://wa.me/573001234567?text=Hola%20Junior,%20quiero%20agendar%20una%20revisión%20en%20el%20taller"
+              href="https://wa.me/573025449422?text=Hola%20Kilmer,%20quiero%20agendar%20una%20revisión%20en%20el%20taller"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-2xl border border-[#25D366]/40 bg-[#25D366]/10 px-8 py-4 text-sm font-bold text-[#4ade80] hover:bg-[#25D366]/20 transition-all active:scale-95"
@@ -636,7 +636,7 @@ export default function LandingPage() {
               <div className="space-y-2 text-[11px]">
                 <div className="flex items-center gap-2">
                   <WhatsAppIcon className="h-3.5 w-3.5 fill-[#25D366] shrink-0" />
-                  <span>+57 300 123 4567</span>
+                  <span>+57 302 544 9422</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock suppressHydrationWarning className="h-3.5 w-3.5 text-brand-400 shrink-0" />

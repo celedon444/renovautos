@@ -101,7 +101,7 @@ export default function AgendarCitaPage() {
             <div className="absolute bottom-4 left-5 right-5 space-y-1">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-500/20 border border-brand-500/40 px-3 py-0.5 text-[10px] font-black uppercase tracking-wider text-brand-400 backdrop-blur-md">
                 <Sparkles suppressHydrationWarning className="h-3 w-3" />
-                Atención Directa por Junior Celedón
+                Atención Directa por Kilmer Primiento
               </span>
               <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                 Agenda tu Turno en el Taller
@@ -150,8 +150,8 @@ export default function AgendarCitaPage() {
 
             <a
               href={buildWhatsAppLink(
-                process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "573001234567",
-                `¡Hola Junior! Acabo de registrar una solicitud de cita en su sitio web:\n\n👤 *Nombre:* ${submittedData.name}\n🚗 *Vehículo / Placa:* ${submittedData.plate || "No especificada"}\n🔧 *Servicio:* ${submittedData.service}\n📅 *Fecha Deseada:* ${submittedData.date}\n\n¿Me confirmas disponibilidad para llevar el vehículo?`
+                process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "573025449422",
+                `¡Hola Kilmer! Acabo de registrar una solicitud de cita en su sitio web:\n\n👤 *Nombre:* ${submittedData.name}\n🚗 *Vehículo / Placa:* ${submittedData.plate || "No especificada"}\n🔧 *Servicio:* ${submittedData.service}\n📅 *Fecha Deseada:* ${submittedData.date}\n\n¿Me confirmas disponibilidad para llevar el vehículo?`
               )}
               target="_blank"
               rel="noopener noreferrer"
@@ -342,11 +342,11 @@ export default function AgendarCitaPage() {
             </div>
             <div>
               <p className="font-bold text-white">Taller Junior Santa Marta</p>
-              <p className="text-[11px]">Calle Principal # 12-34 · Lun a Sáb: 8:00 AM - 6:00 PM</p>
+              <p className="text-[11px]">Calle 156 #7-15 · Lun a Sáb: 8:00 AM - 6:00 PM</p>
             </div>
           </div>
           <a
-            href="https://wa.me/573001234567?text=Hola%20Junior,%20quiero%20hacer%20una%20consulta%20mecánica"
+            href="https://wa.me/573025449422?text=Hola%20Kilmer,%20quiero%20hacer%20una%20consulta%20mecánica"
             target="_blank"
             rel="noopener noreferrer"
             className="text-green-400 hover:underline font-bold flex items-center gap-1"

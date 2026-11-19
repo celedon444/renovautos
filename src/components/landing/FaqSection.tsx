@@ -119,11 +119,11 @@ export default function FaqSection() {
           <div>
             <h3 className="text-sm font-bold text-white">¿Tienes otra consulta sobre tu vehículo?</h3>
             <p className="text-xs text-steel-400 mt-0.5">
-              Junior responde directamente tus preguntas por WhatsApp en horario de taller.
+              Kilmer responde directamente tus preguntas por WhatsApp en horario de taller.
             </p>
           </div>
           <a
-            href="https://wa.me/573001234567?text=Hola%20Junior,%20tengo%20una%20pregunta%20sobre%20mi%20auto"
+            href="https://wa.me/573025449422?text=Hola%20Kilmer,%20tengo%20una%20pregunta%20sobre%20mi%20auto"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-xs font-bold text-white shadow-lg shadow-[#25D366]/25 hover:bg-[#20ba5a] transition-all shrink-0 active:scale-95"
