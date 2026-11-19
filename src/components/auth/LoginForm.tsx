@@ -19,7 +19,7 @@ export default function LoginForm() {
 
       {state.error && (
         <div className="flex items-center gap-2 rounded-lg bg-red-500/10 border border-red-500/20 p-3 text-xs text-red-400">
-          <AlertCircle className="h-4 w-4 shrink-0" />
+          <AlertCircle suppressHydrationWarning className="h-4 w-4 shrink-0" />
           <span>{state.error}</span>
         </div>
       )}
@@ -29,7 +29,7 @@ export default function LoginForm() {
           Correo Electrónico
         </label>
         <div className="relative">
-          <Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-steel-500" />
+          <Mail suppressHydrationWarning className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-steel-500" />
           <input
             name="email"
             type="email"
@@ -50,7 +50,7 @@ export default function LoginForm() {
           Contraseña
         </label>
         <div className="relative">
-          <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-steel-500" />
+          <Lock suppressHydrationWarning className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-steel-500" />
           <input
             name="password"
             type="password"

@@ -15,8 +15,8 @@ export default function LoginPage() {
 
       <div className="w-full max-w-sm rounded-2xl border border-surface-border bg-surface-elevated p-6 shadow-2xl relative z-10 space-y-6">
         <div className="flex flex-col items-center text-center space-y-3">
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-500 shadow-lg shadow-brand-500/30">
-            <Wrench className="h-7 w-7 text-white" />
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-orange-600 shadow-lg shadow-brand-500/30">
+            <Wrench suppressHydrationWarning className="h-7 w-7 text-white" />
           </div>
           <div>
             <h1 className="text-xl font-black text-white tracking-tight">Taller Junior</h1>
@@ -30,7 +30,7 @@ export default function LoginPage() {
 
         <div className="border-t border-surface-border pt-4 text-center">
           <p className="flex items-center justify-center gap-1.5 text-[11px] text-steel-500">
-            <ShieldCheck className="h-3.5 w-3.5 text-brand-400" />
+            <ShieldCheck suppressHydrationWarning className="h-3.5 w-3.5 text-brand-400" />
             Acceso exclusivo para el administrador
           </p>
         </div>
