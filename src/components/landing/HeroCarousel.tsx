@@ -93,7 +93,7 @@ export default function HeroCarousel() {
                 className="object-cover"
               />
               {/* Gradientes oscuros para contraste cinematográfico */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d13] via-[#0b0d13]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d13]/90 via-[#0b0d13]/30 to-transparent" />
 
               {/* Contenido flotante de la diapositiva */}
               <div className="absolute top-4 left-4 z-20">
@@ -102,14 +102,15 @@ export default function HeroCarousel() {
                 </span>
               </div>
 
-              <div className="absolute bottom-20 left-5 right-5 z-20 space-y-1">
-                <span className="text-[11px] font-bold text-brand-400 uppercase tracking-wider">
+              {/* Texto ubicado en la parte inferior para dejar la imagen limpia */}
+              <div className="absolute bottom-10 left-5 right-5 z-20 space-y-1">
+                <span className="text-[10px] sm:text-[11px] font-bold text-brand-400 uppercase tracking-wider">
                   {slide.tag}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight drop-shadow-md">
+                <h3 className="text-lg sm:text-2xl font-black text-white tracking-tight drop-shadow-md">
                   {slide.title}
                 </h3>
-                <p className="text-xs text-steel-300 drop-shadow line-clamp-2">
+                <p className="text-xs text-steel-300 drop-shadow line-clamp-2 max-w-lg">
                   {slide.subtitle}
                 </p>
               </div>
@@ -120,22 +121,6 @@ export default function HeroCarousel() {
           <div className="absolute top-4 right-4 z-20 rounded-full border border-surface-border bg-[#0b0d13]/80 px-3.5 py-1.5 backdrop-blur-md shadow-lg flex items-center gap-2 text-xs font-bold text-white">
             <MapPin suppressHydrationWarning className="h-3.5 w-3.5 text-brand-400" />
             <span>Santa Marta, Colombia</span>
-          </div>
-
-          {/* Badge Flotante Inferior: Kilmer Primiento */}
-          <div className="absolute bottom-3 left-3 right-3 z-20 rounded-2xl border border-surface-border/80 bg-[#0b0d13]/90 px-4 py-3 backdrop-blur-md shadow-xl flex items-center justify-between">
-            <div className="flex items-center gap-2.5">
-              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <div>
-                <p className="text-xs font-black text-white">Kilmer Primiento</p>
-                <p className="text-[10px] sm:text-[11px] text-steel-400">Mecánico Titular & Propietario</p>
-              </div>
-            </div>
-            <div className="text-right">
-              <span className="text-[10px] font-mono font-bold text-brand-400 bg-brand-500/10 border border-brand-500/20 px-2.5 py-1 rounded-lg">
-                Taller Junior · Santa Marta
-              </span>
-            </div>
           </div>
         </div>
 
@@ -156,15 +141,15 @@ export default function HeroCarousel() {
           <ChevronRight suppressHydrationWarning className="h-5 w-5" />
         </button>
 
-        {/* Indicadores de Diapositiva (Dots) */}
-        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+        {/* Indicadores de Diapositiva (Dots) en la parte inferior */}
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5">
           {SLIDES.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrent(idx)}
               aria-label={`Ir a diapositiva ${idx + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === current ? "w-6 bg-brand-500" : "w-2 bg-white/40 hover:bg-white/70"
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                idx === current ? "w-6 bg-brand-500" : "w-1.5 bg-white/40 hover:bg-white/70"
               }`}
             />
           ))}

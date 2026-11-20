@@ -133,11 +133,6 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
           {/* Izquierda: Texto, CTAs y Buscador */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-bold text-brand-400 shadow-inner">
-              <Sparkles suppressHydrationWarning className="h-3.5 w-3.5" />
-              <span>5 Años de Excelencia Mecánica en Santa Marta</span>
-            </div>
-
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.1]">
               Tu auto en manos de{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-orange-400 to-amber-300">
