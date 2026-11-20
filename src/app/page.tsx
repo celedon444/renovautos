@@ -321,42 +321,31 @@ export default function LandingPage() {
             <div className="space-y-3 pt-1">
               {[
                 {
-                  icon: Clock,
-                  color: "brand",
+                  number: "01",
                   title: "Línea de Tiempo en Tiempo Real",
                   desc: "Visualiza cuándo tu vehículo es Recibido, está en Diagnóstico, Cotizado, en Reparación o Listo para retirar.",
                 },
                 {
-                  icon: Camera,
-                  color: "green",
+                  number: "02",
                   title: "Fotos de Evidencia Fotográfica",
                   desc: "Ves la pieza desgastada que retiramos y el repuesto nuevo con empaque original antes de montarlo.",
                 },
                 {
-                  icon: ShieldCheck,
-                  color: "orange",
+                  number: "03",
                   title: "Aprobación de Cotización con 1 Toque",
                   desc: "Desglose transparente de mano de obra y repuestos. No compramos nada sin tu autorización.",
                 },
-              ].map((item, i) => {
-                const Icon = item.icon;
-                const colorMap: Record<string, string> = {
-                  brand: "bg-brand-500/20 text-brand-400",
-                  green: "bg-green-500/20 text-green-400",
-                  orange: "bg-orange-500/20 text-orange-400",
-                };
-                return (
-                  <div key={i} className="flex items-start gap-3.5 rounded-2xl bg-surface-elevated/80 border border-surface-border p-4 hover:border-brand-500/30 transition-colors">
-                    <div className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${colorMap[item.color]}`}>
-                      <Icon suppressHydrationWarning className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h4 className="text-xs font-black text-white">{item.title}</h4>
-                      <p className="text-[11px] text-steel-400 mt-0.5 leading-relaxed">{item.desc}</p>
-                    </div>
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3.5 rounded-2xl bg-surface-elevated/80 border border-surface-border p-4 hover:border-brand-500/30 transition-colors">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-surface border border-surface-border font-mono text-xs font-bold text-brand-400">
+                    {item.number}
                   </div>
-                );
-              })}
+                  <div>
+                    <h4 className="text-xs font-black text-white">{item.title}</h4>
+                    <p className="text-[11px] text-steel-400 mt-0.5 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -397,22 +386,28 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* Timeline */}
-              <div className="grid grid-cols-5 gap-1 text-center">
-                {["🚗", "🔍", "📋", "🔧", "🎉"].map((emoji, i) => (
-                  <div key={i} className="flex flex-col items-center gap-1">
-                    <div className={`flex h-9 w-9 items-center justify-center rounded-xl text-sm transition-all ${
-                      i < 4 ? "bg-green-500/20 text-green-400 border border-green-500/30" :
-                      i === 4 ? "bg-gradient-to-br from-brand-500 to-orange-600 text-white scale-110 shadow-lg shadow-brand-500/40" :
-                      "bg-surface border border-surface-border text-steel-600 opacity-50"
-                    }`}>
-                      {i < 4 ? <CheckCircle2 suppressHydrationWarning className="h-4 w-4 stroke-[2.5]" /> : emoji}
+              {/* Timeline de Seguimiento */}
+              <div className="space-y-2 pt-1">
+                <div className="grid grid-cols-5 gap-1.5">
+                  {["Recibido", "Diagnóst.", "Cotizado", "Reparac.", "Listo"].map((step, i) => (
+                    <div key={i} className="space-y-1.5">
+                      <div
+                        className={`h-1.5 w-full rounded-full transition-all ${
+                          i < 4
+                            ? "bg-emerald-500"
+                            : "bg-gradient-to-r from-brand-500 to-orange-500 shadow-sm shadow-brand-500/50"
+                        }`}
+                      />
+                      <p
+                        className={`text-[10px] text-center font-bold truncate ${
+                          i === 4 ? "text-brand-400" : "text-steel-400"
+                        }`}
+                      >
+                        {step}
+                      </p>
                     </div>
-                    <span className={`text-[9px] font-bold leading-tight ${i === 4 ? "text-brand-400" : i < 4 ? "text-white" : "text-steel-600"}`}>
-                      {["Recibido", "Diagnóst.", "Cotizado", "Reparac.", "Listo"][i]}
-                    </span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
               {/* Presupuesto */}
@@ -435,8 +430,7 @@ export default function LandingPage() {
       <section id="por-que-nosotros" className="py-20 px-4 border-b border-surface-border">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider inline-flex items-center gap-1.5">
-              <Heart suppressHydrationWarning className="h-3.5 w-3.5" />
+            <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider inline-block">
               Nuestra Promesa de Servicio
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
@@ -450,43 +444,46 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               {
-                icon: ShieldCheck, color: "brand",
+                number: "01",
+                tag: "Garantía",
                 title: "Garantía Certificada",
                 desc: "30 días o 1.000 km en mano de obra. Si algo no queda al 100%, lo corregimos sin costo.",
               },
               {
-                icon: Camera, color: "green",
+                number: "02",
+                tag: "Transparencia",
                 title: "Fotos Reales por WhatsApp",
                 desc: "Ves la pieza dañada y el repuesto nuevo antes de que lo instalemos. Cero imaginación necesaria.",
               },
               {
-                icon: Check, color: "amber",
+                number: "03",
+                tag: "Claridad",
                 title: "Presupuesto sin Sorpresas",
                 desc: "El precio que apruebas es el que pagas. Nada se hace sin tu visto bueno previo.",
               },
               {
-                icon: Zap, color: "orange",
+                number: "04",
+                tag: "Atención",
                 title: "Mecánico Dueño Dedicado",
                 desc: "Sin aprendices. Kilmer Primiento interviene personalmente cada vehículo con 5 años de experiencia.",
               },
-            ].map((p, i) => {
-              const Icon = p.icon;
-              const colorMap: Record<string, string> = {
-                brand: "bg-brand-500/15 text-brand-400 border-brand-500/30",
-                green: "bg-green-500/15 text-green-400 border-green-500/30",
-                amber: "bg-amber-500/15 text-amber-400 border-amber-500/30",
-                orange: "bg-orange-500/15 text-orange-400 border-orange-500/30",
-              };
-              return (
-                <div key={i} className="rounded-3xl border border-surface-border bg-surface-elevated p-6 space-y-3 hover:border-brand-500/40 hover:-translate-y-1 transition-all duration-300">
-                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl border ${colorMap[p.color]}`}>
-                    <Icon suppressHydrationWarning className="h-6 w-6" />
-                  </div>
-                  <h3 className="font-bold text-white text-base">{p.title}</h3>
-                  <p className="text-xs text-steel-400 leading-relaxed">{p.desc}</p>
+            ].map((p, i) => (
+              <div
+                key={i}
+                className="rounded-3xl border border-surface-border bg-surface-elevated p-6 space-y-3 hover:border-brand-500/40 hover:-translate-y-1 transition-all duration-300 relative group"
+              >
+                <div className="flex items-center justify-between border-b border-surface-border/60 pb-3">
+                  <span className="font-mono text-xs font-black text-brand-400 tracking-wider">
+                    {p.number}
+                  </span>
+                  <span className="text-[10px] font-semibold text-steel-500 uppercase tracking-widest">
+                    {p.tag}
+                  </span>
                 </div>
-              );
-            })}
+                <h3 className="font-bold text-white text-base pt-1">{p.title}</h3>
+                <p className="text-xs text-steel-400 leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

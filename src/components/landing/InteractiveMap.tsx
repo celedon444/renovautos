@@ -24,17 +24,6 @@ export default function InteractiveMap() {
           className="w-full h-full"
         />
 
-        {/* Badge flotante sobre el mapa */}
-        <div className="absolute top-4 left-4 z-10 rounded-2xl bg-[#0b0d13]/90 backdrop-blur-md p-3.5 border border-surface-border shadow-2xl flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-orange-600 text-white shadow-md shadow-brand-500/25">
-            <MapPin suppressHydrationWarning className="h-5 w-5" />
-          </div>
-          <div>
-            <p className="text-xs font-black text-white">Taller Junior</p>
-            <p className="text-[11px] text-brand-400 font-medium">Calle 156 #7-15 · Santa Marta</p>
-          </div>
-        </div>
-
         {/* Acceso directo a Waze y Google Maps */}
         <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2">
           <a

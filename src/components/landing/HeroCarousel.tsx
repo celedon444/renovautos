@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Star, Award, ShieldCheck, MapPin } from "lucide-react";
+import { ChevronLeft, ChevronRight, ShieldCheck, MapPin } from "lucide-react";
 
 interface Slide {
   id: number;
@@ -122,24 +122,19 @@ export default function HeroCarousel() {
             <span>Santa Marta, Colombia</span>
           </div>
 
-          {/* Badge Flotante Inferior: Junior Celedón */}
-          <div className="absolute bottom-3 left-3 right-3 z-20 rounded-2xl border border-surface-border/80 bg-surface-elevated/95 p-3 sm:p-4 backdrop-blur-md shadow-xl flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl bg-brand-500/20 text-brand-400 border border-brand-500/30">
-                <Award suppressHydrationWarning className="h-5 w-5 sm:h-6 sm:w-6" />
-              </div>
+          {/* Badge Flotante Inferior: Kilmer Primiento */}
+          <div className="absolute bottom-3 left-3 right-3 z-20 rounded-2xl border border-surface-border/80 bg-[#0b0d13]/90 px-4 py-3 backdrop-blur-md shadow-xl flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               <div>
                 <p className="text-xs font-black text-white">Kilmer Primiento</p>
                 <p className="text-[10px] sm:text-[11px] text-steel-400">Mecánico Titular & Propietario</p>
               </div>
             </div>
             <div className="text-right">
-              <div className="flex items-center gap-1 text-amber-400 justify-end">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} suppressHydrationWarning className="h-3 w-3 fill-amber-400" />
-                ))}
-              </div>
-              <span className="text-[10px] font-bold text-green-400">Garantía Certificada</span>
+              <span className="text-[10px] font-mono font-bold text-brand-400 bg-brand-500/10 border border-brand-500/20 px-2.5 py-1 rounded-lg">
+                Taller Junior · Santa Marta
+              </span>
             </div>
           </div>
         </div>
