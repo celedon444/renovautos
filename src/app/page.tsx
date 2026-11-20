@@ -7,6 +7,7 @@ import PublicNavbar from "@/components/landing/PublicNavbar";
 import HeroCarousel from "@/components/landing/HeroCarousel";
 import FaqSection from "@/components/landing/FaqSection";
 import InteractiveMap from "@/components/landing/InteractiveMap";
+import BrandsMarquee from "@/components/landing/BrandsMarquee";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import {
   Wrench,
@@ -130,10 +131,10 @@ export default function LandingPage() {
         <div className="pointer-events-none absolute left-1/4 top-0 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-brand-500/10 blur-[160px]" />
         <div className="pointer-events-none absolute right-0 top-1/2 h-[400px] w-[400px] rounded-full bg-orange-600/8 blur-[140px]" />
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
           {/* Izquierda: Texto, CTAs y Buscador */}
-          <div className="lg:col-span-6 space-y-6">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.1]">
+          <div className="lg:col-span-6 space-y-5">
+            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-white tracking-tight leading-[1.12]">
               Tu auto en manos de{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-orange-400 to-amber-300">
                 quien sabe
@@ -146,10 +147,10 @@ export default function LandingPage() {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-0.5">
               <Link
                 href="/agendar"
-                className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-brand-500 to-orange-600 px-6 py-4 text-sm font-black text-white shadow-xl shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-brand-500/50 active:scale-95"
+                className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-brand-500 to-orange-600 px-6 py-3.5 text-sm font-black text-white shadow-xl shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-brand-500/50 active:scale-95"
               >
                 <Calendar suppressHydrationWarning className="h-4 w-4" />
                 <span>Agendar Turno</span>
@@ -160,7 +161,7 @@ export default function LandingPage() {
                 href="https://wa.me/573025449422?text=Hola%20Kilmer,%20quiero%20hacer%20una%20consulta%20mecánica%20para%20mi%20vehículo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2.5 rounded-2xl border border-[#25D366]/40 bg-[#25D366]/10 px-6 py-4 text-sm font-bold text-[#4ade80] shadow-lg transition-all hover:bg-[#25D366]/20 active:scale-95"
+                className="flex items-center justify-center gap-2.5 rounded-2xl border border-[#25D366]/40 bg-[#25D366]/10 px-6 py-3.5 text-sm font-bold text-[#4ade80] shadow-lg transition-all hover:bg-[#25D366]/20 active:scale-95"
               >
                 <WhatsAppIcon className="h-4 w-4 fill-[#25D366]" />
                 <span>Hablar por WhatsApp</span>
@@ -183,7 +184,7 @@ export default function LandingPage() {
             </div>
 
             {/* Mini Métricas */}
-            <div className="grid grid-cols-3 gap-3 pt-1">
+            <div className="grid grid-cols-3 gap-3 pt-0.5">
               {[
                 { val: "+1,500", label: "Autos reparados" },
                 { val: "5 ★", label: "Calificación" },
@@ -197,27 +198,18 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Derecha: Carrusel Fotográfico Interactivo */}
-          <div className="lg:col-span-6">
+          {/* Derecha: Carrusel Fotográfico Interactivo Simétrico */}
+          <div className="lg:col-span-6 w-full flex items-center justify-center">
             <HeroCarousel />
           </div>
         </div>
 
-        {/* Banda de Logos / Marcas de Vehículos Atendidos */}
-        <div className="max-w-6xl mx-auto mt-14 relative z-10">
-          <p className="text-center text-xs text-steel-500 font-semibold uppercase tracking-widest mb-5">
+        {/* Banda de Marcas con Marquesina Rotatoria Infinita */}
+        <div className="max-w-6xl mx-auto mt-14 relative z-10 space-y-4">
+          <p className="text-center text-xs text-steel-500 font-semibold uppercase tracking-widest">
             Atendemos todas las marcas de autos en Santa Marta
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-steel-500 text-xs font-black uppercase tracking-wide">
-            {["Chevrolet", "Renault", "Toyota", "Mazda", "Nissan", "Hyundai", "Kia", "Ford", "Volkswagen", "Mitsubishi"].map((brand) => (
-              <span
-                key={brand}
-                className="rounded-lg border border-surface-border bg-surface-elevated/40 px-3 py-1.5 hover:border-brand-500/40 hover:text-brand-400 transition-colors cursor-default"
-              >
-                {brand}
-              </span>
-            ))}
-          </div>
+          <BrandsMarquee />
         </div>
       </section>
 

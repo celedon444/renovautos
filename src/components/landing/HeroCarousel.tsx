@@ -70,13 +70,13 @@ export default function HeroCarousel() {
 
   return (
     <div
-      className="relative mx-auto max-w-md lg:max-w-none select-none group"
+      className="relative mx-auto w-full select-none group"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Marco contenedor del Carrusel */}
-      <div className="relative overflow-hidden rounded-3xl border-2 border-surface-border shadow-2xl bg-surface-elevated">
-        <div className="relative h-96 sm:h-[480px] w-full">
+      {/* Marco contenedor del Carrusel con altura simétrica y balanceada */}
+      <div className="relative overflow-hidden rounded-3xl border-2 border-surface-border shadow-2xl bg-surface-elevated h-[480px] sm:h-[540px] lg:h-[590px] w-full">
+        <div className="relative h-full w-full">
           {SLIDES.map((slide, idx) => (
             <div
               key={slide.id}
