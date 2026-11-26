@@ -590,9 +590,9 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {/* Marca */}
             <div className="space-y-4">
-              <Link href="/" className="inline-block bg-white p-2 rounded-xl">
+              <Link href="/" className="inline-block py-1">
                 <Image
-                  src="/brand/logo-horizontal-clean.png"
+                  src="/brand/logo-horizontal-dark.png"
                   alt="Renovautos — Restauración Automotriz"
                   width={200}
                   height={48}
