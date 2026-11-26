@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ShieldCheck, MapPin } from "lucide-react";
+import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 interface Slide {
   id: number;
@@ -16,35 +16,35 @@ interface Slide {
 const SLIDES: Slide[] = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=80",
-    badge: "Mecánica Automotriz",
-    title: "Diagnóstico Certero y Cuidado Total",
-    subtitle: "Atención personalizada por Kilmer Primiento sin intermediarios",
-    tag: "5 Años en Santa Marta",
+    image: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1400&q=80",
+    badge: "Restauración Automotriz",
+    title: "Diagnóstico Certero y Precisión Mecánica",
+    subtitle: "Atención personalizada por Kilmer Primiento con repuestos de primer nivel",
+    tag: "Renovautos · Santa Marta",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
     badge: "Seguimiento en Vivo",
     title: "Fotos y Avances en tu Celular",
-    subtitle: "Consulta el progreso de tu vehículo por WhatsApp sin contraseñas",
+    subtitle: "Consulta el progreso de tu vehículo por WhatsApp en tiempo real sin contraseñas",
     tag: "100% Transparente",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1400&q=80",
     badge: "Seguridad y Frenado",
-    title: "Frenos Cerámicos y Rectificación",
+    title: "Frenos de Alto Desempeño y Rectificación",
     subtitle: "Máxima potencia de frenado para la topografía de Santa Marta y la Sierra",
     tag: "Repuestos Certificados",
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80",
-    badge: "Tecnología Avanzada",
-    title: "Escáner Computarizado Multimarca",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1400&q=80",
+    badge: "Diagnóstico Computarizado",
+    title: "Escáner Avanzado Multimarca",
     subtitle: "Lectura profunda de Check Engine, ABS, sensores y calibración electrónica",
-    tag: "Diagnóstico Rápido",
+    tag: "Tecnología de Punta",
   },
 ];
 
@@ -74,8 +74,8 @@ export default function HeroCarousel() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Marco contenedor del Carrusel con altura simétrica y balanceada */}
-      <div className="relative overflow-hidden rounded-3xl border-2 border-surface-border shadow-2xl bg-surface-elevated h-[480px] sm:h-[540px] lg:h-[590px] w-full">
+      {/* Marco contenedor del Carrusel: Ampliado y Simétrico */}
+      <div className="relative overflow-hidden rounded-3xl border border-surface-border shadow-2xl bg-surface-elevated h-[500px] sm:h-[560px] lg:h-[620px] xl:h-[640px] w-full">
         <div className="relative h-full w-full">
           {SLIDES.map((slide, idx) => (
             <div
@@ -89,28 +89,29 @@ export default function HeroCarousel() {
                 alt={slide.title}
                 fill
                 priority={idx === 0}
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
               {/* Gradientes oscuros para contraste cinematográfico */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d13]/90 via-[#0b0d13]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-[#0a0a0c]/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0c]/30 via-transparent to-transparent" />
 
               {/* Contenido flotante de la diapositiva */}
-              <div className="absolute top-4 left-4 z-20">
-                <span className="rounded-full bg-brand-500/90 text-white font-black text-[10px] uppercase tracking-wider px-3 py-1 shadow-md">
+              <div className="absolute top-5 left-5 z-20">
+                <span className="rounded-full bg-brand-600/90 text-white font-black text-[10px] uppercase tracking-wider px-3.5 py-1.5 shadow-lg backdrop-blur-md border border-brand-500/30">
                   {slide.badge}
                 </span>
               </div>
 
               {/* Texto ubicado en la parte inferior para dejar la imagen limpia */}
-              <div className="absolute bottom-10 left-5 right-5 z-20 space-y-1">
-                <span className="text-[10px] sm:text-[11px] font-bold text-brand-400 uppercase tracking-wider">
+              <div className="absolute bottom-10 left-6 right-6 z-20 space-y-1.5">
+                <span className="text-[10px] sm:text-[11px] font-bold text-brand-400 uppercase tracking-widest">
                   {slide.tag}
                 </span>
-                <h3 className="text-lg sm:text-2xl font-black text-white tracking-tight drop-shadow-md">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight drop-shadow-md">
                   {slide.title}
                 </h3>
-                <p className="text-xs text-steel-300 drop-shadow line-clamp-2 max-w-lg">
+                <p className="text-xs sm:text-sm text-steel-300 drop-shadow line-clamp-2 max-w-xl">
                   {slide.subtitle}
                 </p>
               </div>
@@ -118,8 +119,8 @@ export default function HeroCarousel() {
           ))}
 
           {/* Badge Flotante Superior: Santa Marta */}
-          <div className="absolute top-4 right-4 z-20 rounded-full border border-surface-border bg-[#0b0d13]/80 px-3.5 py-1.5 backdrop-blur-md shadow-lg flex items-center gap-2 text-xs font-bold text-white">
-            <MapPin suppressHydrationWarning className="h-3.5 w-3.5 text-brand-400" />
+          <div className="absolute top-5 right-5 z-20 rounded-full border border-surface-border bg-[#0a0a0c]/85 px-4 py-1.5 backdrop-blur-md shadow-lg flex items-center gap-2 text-xs font-bold text-white">
+            <MapPin suppressHydrationWarning className="h-3.5 w-3.5 text-brand-500" />
             <span>Santa Marta, Colombia</span>
           </div>
         </div>
@@ -128,7 +129,7 @@ export default function HeroCarousel() {
         <button
           onClick={prevSlide}
           aria-label="Diapositiva anterior"
-          className="absolute left-3 top-1/2 -translate-y-1/2 z-30 flex h-9 w-9 items-center justify-center rounded-full bg-[#0b0d13]/70 border border-white/20 text-white backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-brand-500 hover:border-brand-500 active:scale-95"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-[#0a0a0c]/70 border border-white/20 text-white backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-brand-600 hover:border-brand-500 active:scale-95"
         >
           <ChevronLeft suppressHydrationWarning className="h-5 w-5" />
         </button>
@@ -136,20 +137,20 @@ export default function HeroCarousel() {
         <button
           onClick={nextSlide}
           aria-label="Diapositiva siguiente"
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-30 flex h-9 w-9 items-center justify-center rounded-full bg-[#0b0d13]/70 border border-white/20 text-white backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-brand-500 hover:border-brand-500 active:scale-95"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-[#0a0a0c]/70 border border-white/20 text-white backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-brand-600 hover:border-brand-500 active:scale-95"
         >
           <ChevronRight suppressHydrationWarning className="h-5 w-5" />
         </button>
 
         {/* Indicadores de Diapositiva (Dots) en la parte inferior */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5">
+        <div className="absolute bottom-3.5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
           {SLIDES.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrent(idx)}
               aria-label={`Ir a diapositiva ${idx + 1}`}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                idx === current ? "w-6 bg-brand-500" : "w-1.5 bg-white/40 hover:bg-white/70"
+                idx === current ? "w-8 bg-brand-500" : "w-2 bg-white/40 hover:bg-white/70"
               }`}
             />
           ))}

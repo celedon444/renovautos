@@ -10,7 +10,7 @@ interface FloatingWhatsAppProps {
 
 export default function FloatingWhatsApp({
   phone = "573025449422",
-  message = "¡Hola Taller Junior! Deseo hacer una consulta sobre la reparación o mantenimiento de mi vehículo en Santa Marta.",
+  message = "¡Hola Renovautos! Deseo hacer una consulta sobre la restauración o mantenimiento de mi vehículo en Santa Marta.",
 }: FloatingWhatsAppProps) {
   const url = buildWhatsAppLink(phone, message);
 
@@ -20,7 +20,7 @@ export default function FloatingWhatsApp({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contactar a Taller Junior por WhatsApp"
+        aria-label="Contactar a Renovautos por WhatsApp"
         className="group relative flex items-center gap-3 rounded-full bg-[#25D366] p-3.5 sm:px-5 sm:py-3.5 text-white shadow-2xl shadow-[#25D366]/40 transition-all duration-300 hover:scale-105 hover:bg-[#20ba5a] hover:shadow-[#25D366]/60 active:scale-95"
       >
         <span className="relative flex h-6 w-6 items-center justify-center">

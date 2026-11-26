@@ -22,16 +22,14 @@ import {
   Camera,
   Award,
   Star,
-  Check,
   BadgeCheck,
-  Zap,
   Heart,
 } from "lucide-react";
 
 export const metadata = {
-  title: "Taller Junior — Mecánica Automotriz de Precisión en Santa Marta",
+  title: "Renovautos — Restauración y Mecánica Automotriz en Santa Marta",
   description:
-    "Mantenimiento preventivo, frenos, suspensión, diagnóstico computarizado y seguimiento en vivo por WhatsApp para tu vehículo en Santa Marta, Colombia.",
+    "Restauración automotriz, mantenimiento preventivo, frenos, suspensión, diagnóstico computarizado y seguimiento en vivo por WhatsApp en Santa Marta, Colombia.",
 };
 
 const SERVICES = [
@@ -42,7 +40,6 @@ const SERVICES = [
     image: "https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=800&q=80",
     desc: "Cambio de aceite según especificaciones del fabricante, sustitución de filtros y revisión multipunto de 25 elementos críticos.",
     features: ["Aceites sintéticos y semisintéticos", "Filtros certificados", "Revisión de niveles y fugas"],
-    color: "brand",
   },
   {
     icon: Gauge,
@@ -51,7 +48,6 @@ const SERVICES = [
     image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80",
     desc: "Escáner automotriz avanzado multimarca: Check Engine, ABS, Airbag, sensores de oxígeno y calibración electrónica.",
     features: ["Reporte digital de escaneo", "Pruebas de actuadores", "Detección rápida de fallas eléctricas"],
-    color: "blue",
   },
   {
     icon: ShieldCheck,
@@ -60,7 +56,6 @@ const SERVICES = [
     image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=800&q=80",
     desc: "Rectificación y cambio de discos, pastillas cerámicas, purga de líquido DOT 4/5.1 y calibración de freno de mano.",
     features: ["Pastillas cerámicas sin chirridos", "Líquido de alta ebullición", "Prueba de frenado en ruta"],
-    color: "red",
   },
   {
     icon: Car,
@@ -69,7 +64,6 @@ const SERVICES = [
     image: "https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=800&q=80",
     desc: "Amortiguadores, tijeras, terminales, rótulas, rodamientos y alineación computarizada para un andar suave.",
     features: ["Prueba en fosa hidráulica", "Bujes y terminales reforzados", "Mayor estabilidad y confort"],
-    color: "green",
   },
   {
     icon: Award,
@@ -78,16 +72,14 @@ const SERVICES = [
     image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80",
     desc: "Cambio completo de kit de clutch, corrección de pedal duro o patinamiento, cambio de valvulina y sellado de fugas.",
     features: ["Repuestos originales", "Calibración de guaya o bombines", "Suavidad inmediata al pedal"],
-    color: "amber",
   },
   {
     icon: Sparkles,
-    title: "Reparación de Motor",
+    title: "Reparación y Restauración de Motor",
     badge: "Especialidad",
     image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
-    desc: "Correa/cadena de tiempos, bomba de agua, empaquetaduras y erradicación total de fugas de aceite.",
+    desc: "Correa/cadena de tiempos, bomba de agua, empaquetaduras y erradicación total de fugas de aceite con torque exacto.",
     features: ["Torque exacto por manual de taller", "Garantía escrita en motor", "Pruebas de compresión"],
-    color: "orange",
   },
 ];
 
@@ -97,7 +89,7 @@ const TESTIMONIALS = [
     vehicle: "Renault Duster 2020",
     role: "Cliente Particular · Rodadero",
     avatar: "CM",
-    text: "Lo mejor de Taller Junior es que no tienes que estar llamando. Me enviaron el enlace por WhatsApp con fotos del amortiguador dañado y el repuesto nuevo antes de instalarlo. 100% transparente.",
+    text: "Lo mejor de Renovautos es que no tienes que estar llamando. Me enviaron el enlace por WhatsApp con fotos del amortiguador dañado y el repuesto nuevo antes de instalarlo. 100% transparente.",
     rating: 5,
   },
   {
@@ -105,7 +97,7 @@ const TESTIMONIALS = [
     vehicle: "Chevrolet Onix 2022",
     role: "Conductora Diaria · Santa Marta Centro",
     avatar: "DM",
-    text: "Tenía una falla eléctrica que dos mecánicos no resolvieron. Junior le puso el escáner, me explicó exactamente el sensor averiado y en la misma tarde me entregó el carro perfecto.",
+    text: "Tenía una falla eléctrica que dos talleres no resolvieron. En Renovautos le pusieron el escáner, me explicaron exactamente el sensor averiado y en la misma tarde me entregaron el carro perfecto.",
     rating: 5,
   },
   {
@@ -120,37 +112,44 @@ const TESTIMONIALS = [
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#0b0d13] text-steel-100 flex flex-col selection:bg-brand-500 selection:text-white">
+    <div className="min-h-screen bg-[#0a0a0c] text-steel-100 flex flex-col selection:bg-brand-500 selection:text-white">
 
       {/* ── Navbar con Menú Hamburguesa ── */}
       <PublicNavbar />
 
-      {/* ── Hero Section: Dos Columnas con Carrusel ── */}
-      <section id="inicio" className="relative overflow-hidden pt-10 pb-20 px-4 border-b border-surface-border">
-        {/* Glows de ambiente */}
-        <div className="pointer-events-none absolute left-1/4 top-0 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-brand-500/10 blur-[160px]" />
-        <div className="pointer-events-none absolute right-0 top-1/2 h-[400px] w-[400px] rounded-full bg-orange-600/8 blur-[140px]" />
+      {/* ── Hero Section: Dos Columnas con Ancho Completo Ampliado ── */}
+      <section id="inicio" className="relative overflow-hidden pt-8 lg:pt-12 pb-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border">
+        {/* Glows de ambiente en rojo y titanio */}
+        <div className="pointer-events-none absolute left-1/4 top-0 -translate-x-1/2 h-[650px] w-[650px] rounded-full bg-brand-600/12 blur-[170px]" />
+        <div className="pointer-events-none absolute right-0 top-1/2 h-[450px] w-[450px] rounded-full bg-red-700/10 blur-[150px]" />
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           {/* Izquierda: Texto, CTAs y Buscador */}
-          <div className="lg:col-span-6 space-y-5">
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-white tracking-tight leading-[1.12]">
-              Tu auto en manos de{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-orange-400 to-amber-300">
-                quien sabe
+          <div className="lg:col-span-6 space-y-6">
+            <div className="space-y-4">
+              <span className="inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-bold text-brand-400">
+                <span className="h-2 w-2 rounded-full bg-brand-500 animate-pulse" />
+                Restauración & Precisión Mecánica
               </span>
-              {" "}y te mantiene informado
-            </h1>
 
-            <p className="text-sm sm:text-base text-steel-300 leading-relaxed">
-              Diagnóstico computarizado, repuestos de calidad garantizada y seguimiento fotográfico en tiempo real directamente en tu WhatsApp. Sin secretos, sin sorpresas en la factura.
-            </p>
+              <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-white tracking-tight leading-[1.1]">
+                Tu auto en manos de{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-red-400 to-rose-300">
+                  quien sabe
+                </span>
+                {" "}y te mantiene informado
+              </h1>
+
+              <p className="text-sm sm:text-base text-steel-300 leading-relaxed max-w-xl">
+                Diagnóstico computarizado, repuestos de calidad garantizada y seguimiento fotográfico en tiempo real directamente en tu WhatsApp. Sin secretos, sin sorpresas en la factura.
+              </p>
+            </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-0.5">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
               <Link
                 href="/agendar"
-                className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-brand-500 to-orange-600 px-6 py-3.5 text-sm font-black text-white shadow-xl shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-brand-500/50 active:scale-95"
+                className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-brand-600 via-brand-500 to-red-600 px-7 py-4 text-sm font-black text-white shadow-xl shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-brand-500/50 active:scale-95"
               >
                 <Calendar suppressHydrationWarning className="h-4 w-4" />
                 <span>Agendar Turno</span>
@@ -158,10 +157,10 @@ export default function LandingPage() {
               </Link>
 
               <a
-                href="https://wa.me/573025449422?text=Hola%20Kilmer,%20quiero%20hacer%20una%20consulta%20mecánica%20para%20mi%20vehículo"
+                href="https://wa.me/573025449422?text=Hola%20Renovautos,%20quiero%20hacer%20una%20consulta%20para%20mi%20vehículo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2.5 rounded-2xl border border-[#25D366]/40 bg-[#25D366]/10 px-6 py-3.5 text-sm font-bold text-[#4ade80] shadow-lg transition-all hover:bg-[#25D366]/20 active:scale-95"
+                className="flex items-center justify-center gap-2.5 rounded-2xl border border-[#25D366]/40 bg-[#25D366]/10 px-7 py-4 text-sm font-bold text-[#4ade80] shadow-lg transition-all hover:bg-[#25D366]/20 active:scale-95"
               >
                 <WhatsAppIcon className="h-4 w-4 fill-[#25D366]" />
                 <span>Hablar por WhatsApp</span>
@@ -169,7 +168,7 @@ export default function LandingPage() {
             </div>
 
             {/* Widget de Rastreo Rápido */}
-            <div className="rounded-2xl border border-surface-border bg-surface-elevated/90 p-4 shadow-2xl backdrop-blur-md space-y-2.5">
+            <div className="rounded-2xl border border-surface-border bg-surface-elevated/90 p-5 shadow-2xl backdrop-blur-md space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-xs font-bold text-white">
                   <span className="flex h-2 w-2 rounded-full bg-brand-500 animate-ping" />
@@ -184,15 +183,15 @@ export default function LandingPage() {
             </div>
 
             {/* Mini Métricas */}
-            <div className="grid grid-cols-3 gap-3 pt-0.5">
+            <div className="grid grid-cols-3 gap-3.5 pt-1">
               {[
-                { val: "+1,500", label: "Autos reparados" },
+                { val: "+1,500", label: "Autos restaurados" },
                 { val: "5 ★", label: "Calificación" },
                 { val: "30 días", label: "Garantía escrita" },
               ].map((m) => (
-                <div key={m.label} className="rounded-2xl border border-surface-border bg-surface-elevated/60 p-3 text-center">
-                  <p className="text-base sm:text-lg font-black text-brand-400">{m.val}</p>
-                  <p className="text-[10px] text-steel-400 mt-0.5">{m.label}</p>
+                <div key={m.label} className="rounded-2xl border border-surface-border bg-surface-elevated/60 p-3.5 text-center">
+                  <p className="text-base sm:text-xl font-black text-brand-400">{m.val}</p>
+                  <p className="text-[10px] sm:text-xs text-steel-400 mt-0.5">{m.label}</p>
                 </div>
               ))}
             </div>
@@ -205,7 +204,7 @@ export default function LandingPage() {
         </div>
 
         {/* Banda de Marcas con Marquesina Rotatoria Infinita */}
-        <div className="max-w-6xl mx-auto mt-14 relative z-10 space-y-4">
+        <div className="max-w-[1440px] mx-auto mt-16 relative z-10 space-y-4">
           <p className="text-center text-xs text-steel-500 font-semibold uppercase tracking-widest">
             Atendemos todas las marcas de autos en Santa Marta
           </p>
@@ -214,8 +213,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── Catálogo de Servicios con Imágenes Automotrices ── */}
-      <section id="servicios" className="py-20 px-4 border-b border-surface-border bg-surface/40">
-        <div className="max-w-6xl mx-auto space-y-12">
+      <section id="servicios" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border bg-surface/40">
+        <div className="max-w-[1440px] mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider">
               Servicios Especializados
@@ -246,10 +245,10 @@ export default function LandingPage() {
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface-elevated via-surface-elevated/30 to-transparent" />
-                    <span className="absolute top-3 left-3 rounded-full bg-[#0b0d13]/85 backdrop-blur-md px-3 py-1 text-[10px] font-black uppercase tracking-wider text-brand-400 border border-surface-border">
+                    <span className="absolute top-3 left-3 rounded-full bg-[#0a0a0c]/85 backdrop-blur-md px-3 py-1 text-[10px] font-black uppercase tracking-wider text-brand-400 border border-surface-border">
                       {s.badge}
                     </span>
-                    <div className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500 text-white shadow-lg shadow-brand-500/30">
+                    <div className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 text-white shadow-lg shadow-brand-500/30">
                       <Icon suppressHydrationWarning className="h-5 w-5" />
                     </div>
                   </div>
@@ -274,7 +273,7 @@ export default function LandingPage() {
 
                     <Link
                       href="/agendar"
-                      className="w-full flex items-center justify-center gap-2 rounded-xl bg-surface border border-surface-border py-2.5 text-xs font-bold text-steel-200 transition-all hover:bg-brand-500 hover:text-white hover:border-brand-500 active:scale-95"
+                      className="w-full flex items-center justify-center gap-2 rounded-xl bg-surface border border-surface-border py-2.5 text-xs font-bold text-steel-200 transition-all hover:bg-brand-600 hover:text-white hover:border-brand-600 active:scale-95"
                     >
                       <span>Cotizar este Servicio</span>
                       <ChevronRight suppressHydrationWarning className="h-3.5 w-3.5" />
@@ -288,8 +287,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── Portal de Seguimiento en Vivo ── */}
-      <section id="seguimiento" className="py-20 px-4 border-b border-surface-border bg-gradient-to-b from-[#0b0d13] via-surface-elevated/30 to-[#0b0d13]">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section id="seguimiento" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border bg-gradient-to-b from-[#0a0a0c] via-surface-elevated/30 to-[#0a0a0c]">
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Texto y Beneficios */}
           <div className="lg:col-span-6 space-y-6">
             <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider inline-block">
@@ -297,12 +296,12 @@ export default function LandingPage() {
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight">
               Se acabaron las llamadas: <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-orange-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-red-400">
                 "¿Cómo va mi carro?"
               </span>
             </h2>
             <p className="text-xs sm:text-sm text-steel-300 leading-relaxed">
-              Cuando dejas tu vehículo en Taller Junior, recibes un enlace exclusivo a tu WhatsApp para seguir cada etapa desde tu celular — sin contraseñas ni apps:
+              Cuando dejas tu vehículo en Renovautos, recibes un enlace exclusivo a tu WhatsApp para seguir cada etapa desde tu celular — sin contraseñas ni apps:
             </p>
 
             <div className="space-y-3 pt-1">
@@ -342,13 +341,21 @@ export default function LandingPage() {
               {/* Encabezado */}
               <div className="flex items-center justify-between border-b border-surface-border pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500 text-white font-black text-sm">TJ</div>
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0a0a0c] border border-surface-border p-1">
+                    <Image
+                      src="/brand/renovautos-favicon.png"
+                      alt="Renovautos"
+                      width={44}
+                      height={44}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
                   <div>
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="font-mono text-sm font-black text-white">KLR-456</span>
                       <span className="text-[10px] rounded-full bg-brand-500/20 px-2 py-0.5 font-bold text-brand-400">Toyota Corolla</span>
                     </div>
-                    <span className="text-[10px] text-steel-500">Orden #OT-1042 · Taller Junior</span>
+                    <span className="text-[10px] text-steel-500">Orden #OT-1042 · Renovautos</span>
                   </div>
                 </div>
                 <span className="rounded-full bg-green-500/10 border border-green-500/30 px-3 py-1 text-xs font-bold text-green-400 flex items-center gap-1.5">
@@ -366,8 +373,8 @@ export default function LandingPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0d13]/60 to-transparent" />
-                <div className="absolute bottom-2 left-2 rounded-lg bg-[#0b0d13]/90 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-md flex items-center gap-1.5">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c]/60 to-transparent" />
+                <div className="absolute bottom-2 left-2 rounded-lg bg-[#0a0a0c]/90 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-md flex items-center gap-1.5">
                   <Camera suppressHydrationWarning className="h-3 w-3 text-brand-400" />
                   4 Fotos de Evidencia Subidas
                 </div>
@@ -382,7 +389,7 @@ export default function LandingPage() {
                         className={`h-1.5 w-full rounded-full transition-all ${
                           i < 4
                             ? "bg-emerald-500"
-                            : "bg-gradient-to-r from-brand-500 to-orange-500 shadow-sm shadow-brand-500/50"
+                            : "bg-gradient-to-r from-brand-600 to-red-500 shadow-sm shadow-brand-500/50"
                         }`}
                       />
                       <p
@@ -414,17 +421,17 @@ export default function LandingPage() {
       </section>
 
       {/* ── Pilares de Confianza ── */}
-      <section id="por-que-nosotros" className="py-20 px-4 border-b border-surface-border">
-        <div className="max-w-6xl mx-auto space-y-12">
+      <section id="por-que-nosotros" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border">
+        <div className="max-w-[1440px] mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider inline-block">
               Nuestra Promesa de Servicio
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
-              ¿Por qué los Samarios confían en Taller Junior?
+              ¿Por qué los Samarios confían en Renovautos?
             </h2>
             <p className="text-xs sm:text-sm text-steel-400">
-              Mecánica honesta, sin sorpresas en la cuenta y con el respaldo del dueño del taller.
+              Restauración y mecánica honesta, sin sorpresas en la cuenta y con el respaldo directo del dueño.
             </p>
           </div>
 
@@ -440,7 +447,7 @@ export default function LandingPage() {
                 number: "02",
                 tag: "Transparencia",
                 title: "Fotos Reales por WhatsApp",
-                desc: "Ves la pieza dañada y el repuesto nuevo antes de que lo instalemos. Cero imaginación necesaria.",
+                desc: "Ves la pieza dañada y el repuesto nuevo antes de que lo instalemos. Cero dudas.",
               },
               {
                 number: "03",
@@ -451,8 +458,8 @@ export default function LandingPage() {
               {
                 number: "04",
                 tag: "Atención",
-                title: "Mecánico Dueño Dedicado",
-                desc: "Sin aprendices. Kilmer Primiento interviene personalmente cada vehículo con 5 años de experiencia.",
+                title: "Atención Dedicada",
+                desc: "Sin intermediarios. Kilmer Primiento interviene personalmente cada vehículo con repuestos de primer nivel.",
               },
             ].map((p, i) => (
               <div
@@ -476,8 +483,8 @@ export default function LandingPage() {
       </section>
 
       {/* ── Testimonios con Carrusel de Tarjetas ── */}
-      <section id="testimonios" className="py-20 px-4 border-b border-surface-border bg-surface/40">
-        <div className="max-w-6xl mx-auto space-y-12">
+      <section id="testimonios" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border bg-surface/40">
+        <div className="max-w-[1440px] mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider">
               Opiniones de Nuestros Clientes
@@ -529,7 +536,7 @@ export default function LandingPage() {
           <div className="text-center pt-4">
             <Link
               href="/agendar"
-              className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-brand-500 to-orange-600 px-8 py-4 text-sm font-black text-white shadow-xl shadow-brand-500/25 transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-brand-600 via-brand-500 to-red-600 px-8 py-4 text-sm font-black text-white shadow-xl shadow-brand-500/25 transition-all hover:scale-105 active:scale-95"
             >
               <Calendar suppressHydrationWarning className="h-4 w-4" />
               <span>Únete a Nuestros Clientes Satisfechos</span>
@@ -542,8 +549,8 @@ export default function LandingPage() {
       <FaqSection />
 
       {/* ── Ubicación con Mapa Interactivo ── */}
-      <section id="ubicacion" className="py-20 px-4">
-        <div className="max-w-6xl mx-auto space-y-8">
+      <section id="ubicacion" className="py-20 px-4 sm:px-8 lg:px-12">
+        <div className="max-w-[1440px] mx-auto space-y-8">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider">
               Dónde Estamos
@@ -562,14 +569,14 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
             <Link
               href="/agendar"
-              className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-brand-500 to-orange-600 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/25 hover:scale-105 transition-all active:scale-95"
+              className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-brand-600 via-brand-500 to-red-600 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/25 hover:scale-105 transition-all active:scale-95"
             >
               <Calendar suppressHydrationWarning className="h-4 w-4" />
               <span>Agendar Turno en el Taller</span>
             </Link>
 
             <a
-              href="https://wa.me/573025449422?text=Hola%20Kilmer,%20quiero%20agendar%20una%20revisión%20en%20el%20taller"
+              href="https://wa.me/573025449422?text=Hola%20Renovautos,%20quiero%20agendar%20una%20revisión%20en%20el%20taller"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-2xl border border-[#25D366]/40 bg-[#25D366]/10 px-8 py-4 text-sm font-bold text-[#4ade80] hover:bg-[#25D366]/20 transition-all active:scale-95"
@@ -582,23 +589,23 @@ export default function LandingPage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="mt-auto border-t border-surface-border bg-[#07090e] py-12 px-4 text-xs text-steel-500">
-        <div className="max-w-6xl mx-auto space-y-8">
+      <footer className="mt-auto border-t border-surface-border bg-[#07080a] py-12 px-4 sm:px-8 lg:px-12 text-xs text-steel-500">
+        <div className="max-w-[1440px] mx-auto space-y-8">
           {/* Fila Superior */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {/* Marca */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-orange-600 text-white font-black text-sm shadow-md shadow-brand-500/25">
-                  TJ
-                </div>
-                <div>
-                  <p className="font-black text-white text-sm">Taller Junior</p>
-                  <p className="text-[11px] text-steel-400">Mecánica Automotriz · Santa Marta</p>
-                </div>
-              </div>
-              <p className="text-[11px] text-steel-500 leading-relaxed">
-                5 años cuidando los vehículos de los samarios con honestidad, garantía certificada y transparencia total.
+            <div className="space-y-4">
+              <Link href="/" className="inline-block">
+                <Image
+                  src="/brand/logo-horizontal-dark.png"
+                  alt="Renovautos — Restauración Automotriz"
+                  width={220}
+                  height={50}
+                  className="h-10 w-auto object-contain"
+                />
+              </Link>
+              <p className="text-[11px] text-steel-400 leading-relaxed max-w-sm">
+                Restauración automotriz y mecánica de precisión en Santa Marta. Garantía certificada por escrito, seguimiento fotográfico en vivo y transparencia total.
               </p>
             </div>
 
@@ -630,13 +637,13 @@ export default function LandingPage() {
               <div className="flex gap-2 pt-1">
                 <Link
                   href="/agendar"
-                  className="rounded-xl bg-brand-500 px-3 py-2 text-[11px] font-bold text-white hover:bg-brand-600 transition-colors"
+                  className="rounded-xl bg-brand-600 px-3.5 py-2 text-[11px] font-bold text-white hover:bg-brand-500 transition-colors"
                 >
                   Agendar Cita
                 </Link>
                 <Link
                   href="/login"
-                  className="rounded-xl border border-surface-border px-3 py-2 text-[11px] font-bold text-steel-300 hover:border-brand-500 hover:text-brand-400 transition-colors"
+                  className="rounded-xl border border-surface-border px-3.5 py-2 text-[11px] font-bold text-steel-300 hover:border-brand-500 hover:text-brand-400 transition-colors"
                 >
                   Portal Admin
                 </Link>
@@ -646,10 +653,10 @@ export default function LandingPage() {
 
           {/* Fila Inferior */}
           <div className="border-t border-surface-border/60 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] text-steel-600">
-            <p>© 2026 Taller Junior. Todos los derechos reservados.</p>
+            <p>© 2026 Renovautos. Todos los derechos reservados.</p>
             <p className="flex items-center gap-1.5">
               <span>Hecho con</span>
-              <Heart suppressHydrationWarning className="h-3 w-3 text-red-400 fill-red-400" />
+              <Heart suppressHydrationWarning className="h-3 w-3 text-brand-500 fill-brand-500" />
               <span>en Santa Marta, Colombia 🇨🇴</span>
             </p>
           </div>

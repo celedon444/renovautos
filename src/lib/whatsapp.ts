@@ -19,13 +19,13 @@ export function buildOrderUpdateMessage(params: {
     DIAGNOSING: "🔍 Nos encontramos en la fase de diagnóstico computarizado y revisión técnica.",
     QUOTE_SENT: `📋 Tu cotización está lista. Presupuesto estimado: *${formatCOP(totalAmount)}*`,
     APPROVED: "👍 Presupuesto aprobado. Iniciamos trabajos.",
-    IN_REPAIR: "🔧 Tu vehículo se encuentra actualmente en reparación activa.",
+    IN_REPAIR: "🔧 Tu vehículo se encuentra actualmente en proceso de reparación y restauración.",
     QUALITY_CHECK: "🔎 Realizando pruebas y control de calidad final.",
     READY: "🎉 ¡Tu vehículo está LISTO para ser retirado!",
-    DELIVERED: "✅ Servicio completado. Gracias por confiar en Taller Junior.",
+    DELIVERED: "✅ Servicio completado. Gracias por confiar en Renovautos.",
   };
 
   const statusMsg = statusMessages[status] ?? `Estado de tu orden: *${status}*`;
 
-  return `Hola ${firstName} 👋\n\n${statusMsg}\n\n📋 *Orden:* ${orderNumber}\n🚗 *Vehículo:* ${vehiclePlate}\n${totalAmount > 0 ? `💰 *Total:* ${formatCOP(totalAmount)}\n` : ""}\n🔗 *Sigue el estado en vivo con fotos y detalles aquí:*\n${trackUrl}\n\nCualquier duda o comentario, puedes responder directamente a este mensaje.\n— *Taller Junior · Santa Marta, Colombia* 🔧`;
+  return `Hola ${firstName} 👋\n\n${statusMsg}\n\n📋 *Orden:* ${orderNumber}\n🚗 *Vehículo:* ${vehiclePlate}\n${totalAmount > 0 ? `💰 *Total:* ${formatCOP(totalAmount)}\n` : ""}\n🔗 *Sigue el estado en vivo con fotos y detalles aquí:*\n${trackUrl}\n\nCualquier duda o comentario, puedes responder directamente a este mensaje.\n— *Renovautos · Restauración Automotriz · Santa Marta, Colombia* 🏁`;
 }

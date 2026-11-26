@@ -75,12 +75,15 @@ export default function AgendarCitaPage() {
             <ArrowLeft suppressHydrationWarning className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
             <span>Volver al Inicio</span>
           </Link>
-          <div className="flex items-center gap-2.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-orange-600 shadow-md shadow-brand-500/25">
-              <Wrench suppressHydrationWarning className="h-4 w-4 text-white" />
-            </div>
-            <span className="font-black text-white text-sm">Taller Junior</span>
-          </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/brand/logo-horizontal-dark.png"
+              alt="Renovautos"
+              width={160}
+              height={38}
+              className="h-8 w-auto object-contain"
+            />
+          </Link>
         </div>
       </header>
 
@@ -341,7 +344,7 @@ export default function AgendarCitaPage() {
               <MapPin suppressHydrationWarning className="h-5 w-5" />
             </div>
             <div>
-              <p className="font-bold text-white">Taller Junior Santa Marta</p>
+              <p className="font-bold text-white">Renovautos Santa Marta</p>
               <p className="text-[11px]">Calle 156 #7-15 · Lun a Sáb: 8:00 AM - 6:00 PM</p>
             </div>
           </div>

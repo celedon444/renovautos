@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
@@ -48,14 +49,17 @@ export default function AdminSidebar() {
   return (
     <aside className="fixed left-0 top-0 z-40 hidden h-full w-64 flex-col border-r border-surface-border bg-surface-elevated md:flex">
       {/* Logo */}
-      <div className="flex h-16 items-center gap-3 border-b border-surface-border px-5">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500 shadow-md shadow-brand-500/20">
-          <Wrench suppressHydrationWarning className="h-5 w-5 text-white" />
-        </div>
-        <div>
-          <p className="font-bold text-white leading-tight">Taller Junior</p>
-          <p className="text-xs text-steel-400">Santa Marta · Sistema</p>
-        </div>
+      <div className="flex h-16 items-center border-b border-surface-border px-5">
+        <Link href="/admin" className="flex items-center py-1">
+          <Image
+            src="/brand/logo-horizontal-dark.png"
+            alt="Renovautos — Restauración Automotriz"
+            width={180}
+            height={44}
+            className="h-8 w-auto object-contain"
+            priority
+          />
+        </Link>
       </div>
 
       {/* Navegación */}
@@ -98,7 +102,7 @@ export default function AdminSidebar() {
       <div className="border-t border-surface-border p-3 space-y-2">
         <LogoutButton />
         <p className="text-center text-[10px] text-steel-600">
-          Taller Junior v1.0 · Santa Marta
+          Renovautos v1.0 · Santa Marta
         </p>
       </div>
     </aside>

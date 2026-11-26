@@ -5,7 +5,7 @@ import AdminSidebar from "@/components/layout/AdminSidebar";
 import AdminHeader from "@/components/layout/AdminHeader";
 
 export const metadata = {
-  title: { default: "Panel Taller", template: "%s | Taller Junior" },
+  title: { default: "Panel Taller", template: "%s | Renovautos" },
 };
 
 export default async function AdminLayout({

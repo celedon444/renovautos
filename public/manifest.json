@@ -1,17 +1,17 @@
 {
-  "name": "Taller Junior - Santa Marta",
-  "short_name": "TallerJunior",
-  "description": "Sistema de gestión y seguimiento para Taller Junior en Santa Marta, Colombia.",
+  "name": "Renovautos - Restauración Automotriz",
+  "short_name": "Renovautos",
+  "description": "Sistema de gestión y seguimiento en vivo para Renovautos en Santa Marta, Colombia.",
   "start_url": "/admin",
   "display": "standalone",
-  "background_color": "#0f1117",
-  "theme_color": "#f97316",
+  "background_color": "#0a0a0c",
+  "theme_color": "#e11d2a",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/brand/renovautos-favicon.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
     }
   ]
 }

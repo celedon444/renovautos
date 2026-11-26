@@ -83,16 +83,16 @@ export default async function EstadoTokenPage({
           </Link>
 
           <div className="flex items-center gap-3 mb-6">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500 shadow-lg shadow-brand-500/30">
-              <Wrench suppressHydrationWarning className="h-5 w-5 text-white" />
-            </div>
-            <div>
-              <p className="font-bold text-white text-sm">Taller Junior</p>
-              <p className="text-xs text-slate-400 flex items-center gap-1">
-                <MapPin suppressHydrationWarning className="h-3 w-3" />
-                Santa Marta, Colombia
-              </p>
-            </div>
+            <Link href="/" className="inline-block">
+              <Image
+                src="/brand/logo-horizontal-dark.png"
+                alt="Renovautos — Restauración Automotriz"
+                width={200}
+                height={48}
+                className="h-10 w-auto object-contain"
+                priority
+              />
+            </Link>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-2">
@@ -422,7 +422,7 @@ export default async function EstadoTokenPage({
           <section className="rounded-2xl border border-brand-500/20 bg-brand-500/5 backdrop-blur-sm p-5">
             <h2 className="text-sm font-bold text-white mb-3 flex items-center gap-2">
               <Shield suppressHydrationWarning className="h-4 w-4 text-brand-400" />
-              Garantía Taller Junior
+              Garantía Renovautos
             </h2>
             <div className="space-y-2">
               {[
@@ -460,7 +460,7 @@ export default async function EstadoTokenPage({
             Volver al Inicio
           </Link>
           <p className="text-xs text-slate-600 mt-4">
-            Taller Junior © 2025 · Santa Marta, Colombia
+            Renovautos © 2026 · Santa Marta, Colombia
           </p>
         </div>
       </div>

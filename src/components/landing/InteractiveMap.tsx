@@ -13,7 +13,7 @@ export default function InteractiveMap() {
       {/* Mapa Interactivo con la ubicación exacta */}
       <div className="relative h-72 sm:h-96 w-full bg-surface-elevated">
         <iframe
-          title="Ubicación de Taller Junior en Calle 156 #7-15, Santa Marta, Colombia"
+          title="Ubicación de Renovautos en Calle 156 #7-15, Santa Marta, Colombia"
           src="https://maps.google.com/maps?q=calle%20156%20%237-15%2C%20Santa%20Marta%2C%20Magdalena%2C%20Colombia&t=&z=16&ie=UTF8&iwloc=&output=embed"
           width="100%"
           height="100%"

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, HelpCircle, MessageCircle } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 interface FAQItem {
@@ -20,13 +20,13 @@ const FAQS: FAQItem[] = [
   {
     question: "¿Cómo funciona el seguimiento en vivo por WhatsApp?",
     answer:
-      "Al ingresar tu vehículo a Taller Junior, el sistema genera automáticamente una orden de trabajo digital con un código único (ej: TJ-7K9P-2M4X) y te envía el enlace directo a tu WhatsApp. No requieres crear usuarios ni contraseñas. Al abrirlo, ves en qué fase va tu auto y fotos reales de las piezas retiradas y los repuestos nuevos instalados.",
+      "Al ingresar tu vehículo a Renovautos, el sistema genera automáticamente una orden de trabajo digital con un código único (ej: TJ-7K9P-2M4X) y te envía el enlace directo a tu WhatsApp. No requieres crear usuarios ni contraseñas. Al abrirlo, ves en qué fase va tu auto y fotos reales de las piezas retiradas y los repuestos nuevos instalados.",
     badge: "Tecnología",
   },
   {
     question: "¿Debo autorizar la cotización antes de que compren los repuestos?",
     answer:
-      "Totalmente. En Taller Junior practicamos una política de Cero Sorpresas. Desglosamos mano de obra y repuestos en tu portal web. Ninguna pieza es adquirida ni montada sin tu previa aprobación por WhatsApp o en persona. Lo que autorizas es lo que pagas.",
+      "Totalmente. En Renovautos practicamos una política de Cero Sorpresas. Desglosamos mano de obra y repuestos en tu portal web. Ninguna pieza es adquirida ni montada sin tu previa aprobación por WhatsApp o en persona. Lo que autorizas es lo que pagas.",
     badge: "Transparencia",
   },
   {
@@ -57,8 +57,8 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-20 px-4 border-b border-surface-border bg-surface/30">
-      <div className="max-w-4xl mx-auto space-y-12">
+    <section id="faq" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border bg-surface/30">
+      <div className="max-w-5xl mx-auto space-y-12">
         <div className="text-center space-y-3">
           <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider inline-flex items-center gap-1.5">
             <HelpCircle suppressHydrationWarning className="h-3.5 w-3.5" />
@@ -68,7 +68,7 @@ export default function FaqSection() {
             Preguntas Frecuentes
           </h2>
           <p className="text-xs sm:text-sm text-steel-400 max-w-xl mx-auto">
-            Todo lo que necesitas saber antes de traer tu vehículo a Taller Junior en Santa Marta.
+            Todo lo que necesitas saber antes de traer tu vehículo a Renovautos en Santa Marta.
           </p>
         </div>
 
@@ -123,10 +123,10 @@ export default function FaqSection() {
             </p>
           </div>
           <a
-            href="https://wa.me/573025449422?text=Hola%20Kilmer,%20tengo%20una%20pregunta%20sobre%20mi%20auto"
+            href="https://wa.me/573025449422?text=Hola%20Renovautos,%20tengo%20una%20pregunta%20sobre%20mi%20auto"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-xs font-bold text-white shadow-lg shadow-[#25D366]/25 hover:bg-[#20ba5a] transition-all shrink-0 active:scale-95"
+            className="flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-2.5 text-xs font-bold text-white shadow-lg shadow-[#25D366]/25 hover:bg-[#20ba5a] transition-all shrink-0 active:scale-95"
           >
             <WhatsAppIcon className="h-4 w-4 fill-white" />
             <span>Preguntar al WhatsApp</span>
