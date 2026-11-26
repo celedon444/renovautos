@@ -60,16 +60,16 @@ export default function BrandsMarquee() {
 
   return (
     <div className="relative overflow-hidden w-full py-3">
-      {/* Sombras difuminadas en los extremos */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-[#0b0d13] to-transparent z-10" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-[#0b0d13] to-transparent z-10" />
+      {/* Sombras difuminadas en los extremos acordes al fondo claro */}
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-surface to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-surface to-transparent z-10" />
 
       {/* Tira rotatoria continua */}
       <div className="flex w-max animate-marquee items-center gap-6 sm:gap-10">
         {allBrands.map((brand, idx) => (
           <div
             key={`${brand.name}-${idx}`}
-            className="group relative flex items-center justify-center rounded-xl px-4 py-2.5 opacity-40 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+            className="group relative flex items-center justify-center rounded-2xl bg-white/70 border border-slate-200/80 shadow-xs px-5 py-3 transition-all duration-300 hover:bg-white hover:shadow-md hover:border-slate-300"
             title={brand.name}
           >
             <Image
@@ -77,7 +77,7 @@ export default function BrandsMarquee() {
               alt={`Logo ${brand.name}`}
               width={48}
               height={28}
-              className="h-7 w-auto object-contain"
+              className="h-7 w-auto object-contain opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
               unoptimized
             />
           </div>

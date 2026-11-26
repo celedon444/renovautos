@@ -56,28 +56,28 @@ export default function InteractiveMap() {
             <MapPin suppressHydrationWarning className="h-4 w-4" />
             <span>Dirección Exacta</span>
           </div>
-          <p className="font-bold text-white text-sm">Calle 156 #7-15</p>
-          <p className="text-steel-400 text-[11px]">
+          <p className="font-bold text-slate-900 text-sm">Calle 156 #7-15</p>
+          <p className="text-slate-500 text-[11px]">
             Santa Marta, Magdalena · Fácil acceso desde El Rodadero y vía Gaira
           </p>
         </div>
 
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-brand-400 font-bold mb-1">
+          <div className="flex items-center gap-2 text-brand-600 font-bold mb-1">
             <Clock suppressHydrationWarning className="h-4 w-4" />
             <span>Horario de Atención</span>
           </div>
-          <p className="font-bold text-white text-sm">Lunes a Sábado</p>
-          <p className="text-steel-400 text-[11px]">8:00 AM - 6:00 PM (Jornada Continua)</p>
+          <p className="font-bold text-slate-900 text-sm">Lunes a Sábado</p>
+          <p className="text-slate-500 text-[11px]">8:00 AM - 6:00 PM (Jornada Continua)</p>
         </div>
 
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-green-400 font-bold mb-1">
+          <div className="flex items-center gap-2 text-emerald-600 font-bold mb-1">
             <WhatsAppIcon className="h-4 w-4 fill-[#25D366]" />
             <span>Kilmer Primiento · Contacto</span>
           </div>
-          <p className="font-bold text-white text-sm">+57 302 544 9422</p>
-          <p className="text-steel-400 text-[11px]">Mecánico y dueño del taller</p>
+          <p className="font-bold text-slate-900 text-sm">+57 302 544 9422</p>
+          <p className="text-slate-500 text-[11px]">Mecánico y dueño del taller</p>
         </div>
       </div>
     </div>

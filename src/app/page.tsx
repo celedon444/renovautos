@@ -17,7 +17,6 @@ import {
   Clock,
   Calendar,
   ChevronRight,
-  Sparkles,
   Gauge,
   Camera,
   Award,
@@ -74,7 +73,7 @@ const SERVICES = [
     features: ["Repuestos originales", "Calibración de guaya o bombines", "Suavidad inmediata al pedal"],
   },
   {
-    icon: Sparkles,
+    icon: Wrench,
     title: "Reparación y Restauración de Motor",
     badge: "Especialidad",
     image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
@@ -112,35 +111,31 @@ const TESTIMONIALS = [
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-steel-100 flex flex-col selection:bg-brand-500 selection:text-white">
+    <div className="min-h-screen bg-[#f6f8fb] text-slate-900 flex flex-col selection:bg-brand-600 selection:text-white">
 
       {/* ── Navbar con Menú Hamburguesa ── */}
       <PublicNavbar />
 
-      {/* ── Hero Section: Dos Columnas con Ancho Completo Ampliado ── */}
-      <section id="inicio" className="relative overflow-hidden pt-8 lg:pt-12 pb-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border">
-        {/* Glows de ambiente en rojo y titanio */}
-        <div className="pointer-events-none absolute left-1/4 top-0 -translate-x-1/2 h-[650px] w-[650px] rounded-full bg-brand-600/12 blur-[170px]" />
-        <div className="pointer-events-none absolute right-0 top-1/2 h-[450px] w-[450px] rounded-full bg-red-700/10 blur-[150px]" />
-
+      {/* ── Hero Section: Fondo Claro Suave, Equilibrado y Elegante ── */}
+      <section id="inicio" className="relative overflow-hidden pt-8 lg:pt-12 pb-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 bg-gradient-to-b from-[#f8fafd] to-[#f4f6fa]">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
           {/* Izquierda: Texto, CTAs y Buscador */}
           <div className="lg:col-span-6 space-y-6">
             <div className="space-y-4">
-              <span className="inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-bold text-brand-400">
-                <span className="h-2 w-2 rounded-full bg-brand-500 animate-pulse" />
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 shadow-2xs">
+                <span className="h-2 w-2 rounded-full bg-brand-600" />
                 Restauración & Precisión Mecánica
               </span>
 
-              <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-white tracking-tight leading-[1.1]">
+              <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-slate-900 tracking-tight leading-[1.1]">
                 Tu auto en manos de{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-red-400 to-rose-300">
+                <span className="text-brand-600">
                   quien sabe
                 </span>
                 {" "}y te mantiene informado
               </h1>
 
-              <p className="text-sm sm:text-base text-steel-300 leading-relaxed max-w-xl">
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
                 Diagnóstico computarizado, repuestos de calidad garantizada y seguimiento fotográfico en tiempo real directamente en tu WhatsApp. Sin secretos, sin sorpresas en la factura.
               </p>
             </div>
@@ -149,7 +144,7 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
               <Link
                 href="/agendar"
-                className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-brand-600 via-brand-500 to-red-600 px-7 py-4 text-sm font-black text-white shadow-xl shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-brand-500/50 active:scale-95"
+                className="flex items-center justify-center gap-2.5 rounded-2xl bg-brand-600 hover:bg-brand-700 px-7 py-4 text-sm font-black text-white shadow-lg shadow-brand-600/25 transition-all hover:scale-105 active:scale-95"
               >
                 <Calendar suppressHydrationWarning className="h-4 w-4" />
                 <span>Agendar Turno</span>
@@ -160,7 +155,7 @@ export default function LandingPage() {
                 href="https://wa.me/573025449422?text=Hola%20Renovautos,%20quiero%20hacer%20una%20consulta%20para%20mi%20vehículo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2.5 rounded-2xl border border-[#25D366]/40 bg-[#25D366]/10 px-7 py-4 text-sm font-bold text-[#4ade80] shadow-lg transition-all hover:bg-[#25D366]/20 active:scale-95"
+                className="flex items-center justify-center gap-2.5 rounded-2xl border border-[#25D366]/60 bg-white hover:bg-[#25D366]/10 px-7 py-4 text-sm font-bold text-[#16a34a] shadow-xs transition-all active:scale-95"
               >
                 <WhatsAppIcon className="h-4 w-4 fill-[#25D366]" />
                 <span>Hablar por WhatsApp</span>
@@ -168,17 +163,17 @@ export default function LandingPage() {
             </div>
 
             {/* Widget de Rastreo Rápido */}
-            <div className="rounded-2xl border border-surface-border bg-surface-elevated/90 p-5 shadow-2xl backdrop-blur-md space-y-3">
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2 text-xs font-bold text-white">
-                  <span className="flex h-2 w-2 rounded-full bg-brand-500 animate-ping" />
+                <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
+                  <span className="flex h-2 w-2 rounded-full bg-brand-600 animate-ping" />
                   <span>¿Tu auto ya está en el taller?</span>
                 </div>
-                <span className="text-[10px] text-steel-400 bg-surface border border-surface-border rounded-md px-2 py-0.5">Sin contraseñas</span>
+                <span className="text-[10px] text-slate-500 bg-slate-100 border border-slate-200 rounded-md px-2 py-0.5">Sin contraseñas</span>
               </div>
               <SearchTokenForm />
-              <p className="text-[11px] text-steel-500">
-                Código único recibido por WhatsApp — ej: <span className="text-brand-400 font-mono font-bold">TJ-7K9P-2M4X</span>
+              <p className="text-[11px] text-slate-500">
+                Código único recibido por WhatsApp — ej: <span className="text-brand-600 font-mono font-bold">TJ-7K9P-2M4X</span>
               </p>
             </div>
 
@@ -189,9 +184,9 @@ export default function LandingPage() {
                 { val: "5 ★", label: "Calificación" },
                 { val: "30 días", label: "Garantía escrita" },
               ].map((m) => (
-                <div key={m.label} className="rounded-2xl border border-surface-border bg-surface-elevated/60 p-3.5 text-center">
-                  <p className="text-base sm:text-xl font-black text-brand-400">{m.val}</p>
-                  <p className="text-[10px] sm:text-xs text-steel-400 mt-0.5">{m.label}</p>
+                <div key={m.label} className="rounded-2xl border border-slate-200/80 bg-white p-3.5 text-center shadow-2xs">
+                  <p className="text-base sm:text-xl font-black text-slate-900">{m.val}</p>
+                  <p className="text-[10px] sm:text-xs text-slate-500 mt-0.5">{m.label}</p>
                 </div>
               ))}
             </div>
@@ -205,7 +200,7 @@ export default function LandingPage() {
 
         {/* Banda de Marcas con Marquesina Rotatoria Infinita */}
         <div className="max-w-[1440px] mx-auto mt-16 relative z-10 space-y-4">
-          <p className="text-center text-xs text-steel-500 font-semibold uppercase tracking-widest">
+          <p className="text-center text-xs text-slate-500 font-semibold uppercase tracking-widest">
             Atendemos todas las marcas de autos en Santa Marta
           </p>
           <BrandsMarquee />
@@ -213,16 +208,16 @@ export default function LandingPage() {
       </section>
 
       {/* ── Catálogo de Servicios con Imágenes Automotrices ── */}
-      <section id="servicios" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border bg-surface/40">
+      <section id="servicios" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 bg-slate-100/50">
         <div className="max-w-[1440px] mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider">
+            <span className="rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider shadow-2xs">
               Servicios Especializados
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
               Mecánica Profesional con Repuestos de Primera
             </h2>
-            <p className="text-xs sm:text-sm text-steel-400 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Atención directa por el mecánico dueño. No aprendices, no intermediarios, no sorpresas.
             </p>
           </div>
@@ -233,7 +228,7 @@ export default function LandingPage() {
               return (
                 <div
                   key={idx}
-                  className="group rounded-3xl border border-surface-border bg-surface-elevated overflow-hidden transition-all duration-300 hover:border-brand-500/50 hover:shadow-2xl hover:shadow-brand-500/10 hover:-translate-y-1 flex flex-col"
+                  className="group rounded-3xl border border-slate-200/80 bg-white overflow-hidden transition-all duration-300 hover:border-slate-300 hover:shadow-xl hover:-translate-y-1 flex flex-col"
                 >
                   {/* Imagen del Servicio */}
                   <div className="relative h-48 w-full overflow-hidden">
@@ -244,28 +239,28 @@ export default function LandingPage() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-surface-elevated via-surface-elevated/30 to-transparent" />
-                    <span className="absolute top-3 left-3 rounded-full bg-[#0a0a0c]/85 backdrop-blur-md px-3 py-1 text-[10px] font-black uppercase tracking-wider text-brand-400 border border-surface-border">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <span className="absolute top-3 left-3 rounded-full bg-white/95 backdrop-blur-md px-3 py-1 text-[10px] font-black uppercase tracking-wider text-slate-800 shadow-sm border border-slate-200">
                       {s.badge}
                     </span>
-                    <div className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 text-white shadow-lg shadow-brand-500/30">
+                    <div className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-white shadow-md">
                       <Icon suppressHydrationWarning className="h-5 w-5" />
                     </div>
                   </div>
 
                   {/* Contenido */}
-                  <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                     <div className="space-y-2">
-                      <h3 className="font-black text-white text-base tracking-tight group-hover:text-brand-400 transition-colors">
+                      <h3 className="font-black text-slate-900 text-base tracking-tight group-hover:text-brand-600 transition-colors">
                         {s.title}
                       </h3>
-                      <p className="text-xs text-steel-400 leading-relaxed">{s.desc}</p>
+                      <p className="text-xs text-slate-600 leading-relaxed">{s.desc}</p>
                     </div>
 
-                    <ul className="space-y-1.5 pt-3 border-t border-surface-border/60 text-[11px] text-steel-300">
+                    <ul className="space-y-2 pt-3 border-t border-slate-100 text-[11px] text-slate-700">
                       {s.features.map((feat, fIdx) => (
                         <li key={fIdx} className="flex items-center gap-2">
-                          <CheckCircle2 suppressHydrationWarning className="h-3.5 w-3.5 text-green-400 shrink-0" />
+                          <CheckCircle2 suppressHydrationWarning className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
                           <span>{feat}</span>
                         </li>
                       ))}
@@ -273,7 +268,7 @@ export default function LandingPage() {
 
                     <Link
                       href="/agendar"
-                      className="w-full flex items-center justify-center gap-2 rounded-xl bg-surface border border-surface-border py-2.5 text-xs font-bold text-steel-200 transition-all hover:bg-brand-600 hover:text-white hover:border-brand-600 active:scale-95"
+                      className="w-full flex items-center justify-center gap-2 rounded-xl bg-slate-50 border border-slate-200 py-2.5 text-xs font-bold text-slate-800 transition-all hover:bg-brand-600 hover:text-white hover:border-brand-600 active:scale-95"
                     >
                       <span>Cotizar este Servicio</span>
                       <ChevronRight suppressHydrationWarning className="h-3.5 w-3.5" />
@@ -287,20 +282,20 @@ export default function LandingPage() {
       </section>
 
       {/* ── Portal de Seguimiento en Vivo ── */}
-      <section id="seguimiento" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border bg-gradient-to-b from-[#0a0a0c] via-surface-elevated/30 to-[#0a0a0c]">
+      <section id="seguimiento" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 bg-[#f6f8fb]">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Texto y Beneficios */}
           <div className="lg:col-span-6 space-y-6">
-            <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider inline-block">
+            <span className="rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider inline-block shadow-2xs">
               Transparencia Absoluta
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
               Se acabaron las llamadas: <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-red-400">
+              <span className="text-brand-600">
                 "¿Cómo va mi carro?"
               </span>
             </h2>
-            <p className="text-xs sm:text-sm text-steel-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Cuando dejas tu vehículo en Renovautos, recibes un enlace exclusivo a tu WhatsApp para seguir cada etapa desde tu celular — sin contraseñas ni apps:
             </p>
 
@@ -322,13 +317,13 @@ export default function LandingPage() {
                   desc: "Desglose transparente de mano de obra y repuestos. No compramos nada sin tu autorización.",
                 },
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3.5 rounded-2xl bg-surface-elevated/80 border border-surface-border p-4 hover:border-brand-500/30 transition-colors">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-surface border border-surface-border font-mono text-xs font-bold text-brand-400">
+                <div key={i} className="flex items-start gap-3.5 rounded-2xl bg-white border border-slate-200 p-4 shadow-xs hover:border-slate-300 transition-colors">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-slate-100 border border-slate-200 font-mono text-xs font-bold text-slate-800">
                     {item.number}
                   </div>
                   <div>
-                    <h4 className="text-xs font-black text-white">{item.title}</h4>
-                    <p className="text-[11px] text-steel-400 mt-0.5 leading-relaxed">{item.desc}</p>
+                    <h4 className="text-xs font-black text-slate-900">{item.title}</h4>
+                    <p className="text-[11px] text-slate-600 mt-0.5 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -337,11 +332,11 @@ export default function LandingPage() {
 
           {/* Maqueta del Portal del Cliente */}
           <div className="lg:col-span-6">
-            <div className="rounded-3xl border-2 border-surface-border bg-surface-elevated p-5 sm:p-6 shadow-2xl space-y-4">
+            <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xl space-y-4">
               {/* Encabezado */}
-              <div className="flex items-center justify-between border-b border-surface-border pb-4">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0a0a0c] border border-surface-border p-1">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-50 border border-slate-200 p-1">
                     <Image
                       src="/brand/renovautos-favicon.png"
                       alt="Renovautos"
@@ -352,20 +347,20 @@ export default function LandingPage() {
                   </div>
                   <div>
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="font-mono text-sm font-black text-white">KLR-456</span>
-                      <span className="text-[10px] rounded-full bg-brand-500/20 px-2 py-0.5 font-bold text-brand-400">Toyota Corolla</span>
+                      <span className="font-mono text-sm font-black text-slate-900">KLR-456</span>
+                      <span className="text-[10px] rounded-full bg-slate-100 border border-slate-200 px-2 py-0.5 font-bold text-slate-700">Toyota Corolla</span>
                     </div>
-                    <span className="text-[10px] text-steel-500">Orden #OT-1042 · Renovautos</span>
+                    <span className="text-[10px] text-slate-500">Orden #OT-1042 · Renovautos</span>
                   </div>
                 </div>
-                <span className="rounded-full bg-green-500/10 border border-green-500/30 px-3 py-1 text-xs font-bold text-green-400 flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+                <span className="rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-xs font-bold text-emerald-700 flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                   Listo para Entrega
                 </span>
               </div>
 
               {/* Imagen de Evidencia */}
-              <div className="relative h-44 w-full rounded-2xl overflow-hidden border border-surface-border">
+              <div className="relative h-44 w-full rounded-2xl overflow-hidden border border-slate-200">
                 <Image
                   src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80"
                   alt="Vehículo en proceso de mantenimiento"
@@ -373,8 +368,8 @@ export default function LandingPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c]/60 to-transparent" />
-                <div className="absolute bottom-2 left-2 rounded-lg bg-[#0a0a0c]/90 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-md flex items-center gap-1.5">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-2 left-2 rounded-lg bg-black/80 px-2.5 py-1 text-[10px] font-bold text-white backdrop-blur-md flex items-center gap-1.5">
                   <Camera suppressHydrationWarning className="h-3 w-3 text-brand-400" />
                   4 Fotos de Evidencia Subidas
                 </div>
@@ -389,12 +384,12 @@ export default function LandingPage() {
                         className={`h-1.5 w-full rounded-full transition-all ${
                           i < 4
                             ? "bg-emerald-500"
-                            : "bg-gradient-to-r from-brand-600 to-red-500 shadow-sm shadow-brand-500/50"
+                            : "bg-brand-600 shadow-xs"
                         }`}
                       />
                       <p
                         className={`text-[10px] text-center font-bold truncate ${
-                          i === 4 ? "text-brand-400" : "text-steel-400"
+                          i === 4 ? "text-brand-600 font-extrabold" : "text-slate-500"
                         }`}
                       >
                         {step}
@@ -405,12 +400,12 @@ export default function LandingPage() {
               </div>
 
               {/* Presupuesto */}
-              <div className="rounded-2xl bg-surface p-3.5 border border-surface-border flex items-center justify-between text-xs">
+              <div className="rounded-2xl bg-slate-50 p-4 border border-slate-200 flex items-center justify-between text-xs">
                 <div>
-                  <p className="text-[10px] text-steel-500 uppercase font-bold tracking-wider">Total Aprobado</p>
-                  <p className="font-black text-white text-base mt-0.5">$320.000 COP</p>
+                  <p className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Total Aprobado</p>
+                  <p className="font-black text-slate-900 text-base mt-0.5">$320.000 COP</p>
                 </div>
-                <span className="inline-flex items-center gap-1 rounded-lg bg-emerald-500/10 px-3 py-1.5 text-[11px] font-bold text-emerald-400 border border-emerald-500/20">
+                <span className="inline-flex items-center gap-1 rounded-lg bg-emerald-100 px-3 py-1.5 text-[11px] font-bold text-emerald-800 border border-emerald-200">
                   <BadgeCheck suppressHydrationWarning className="h-3.5 w-3.5" />
                   Autorizado por el Cliente
                 </span>
@@ -421,16 +416,16 @@ export default function LandingPage() {
       </section>
 
       {/* ── Pilares de Confianza ── */}
-      <section id="por-que-nosotros" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border">
+      <section id="por-que-nosotros" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 bg-white">
         <div className="max-w-[1440px] mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider inline-block">
+            <span className="rounded-full bg-slate-100 border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider inline-block">
               Nuestra Promesa de Servicio
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
               ¿Por qué los Samarios confían en Renovautos?
             </h2>
-            <p className="text-xs sm:text-sm text-steel-400">
+            <p className="text-xs sm:text-sm text-slate-600">
               Restauración y mecánica honesta, sin sorpresas en la cuenta y con el respaldo directo del dueño.
             </p>
           </div>
@@ -464,18 +459,18 @@ export default function LandingPage() {
             ].map((p, i) => (
               <div
                 key={i}
-                className="rounded-3xl border border-surface-border bg-surface-elevated p-6 space-y-3 hover:border-brand-500/40 hover:-translate-y-1 transition-all duration-300 relative group"
+                className="rounded-3xl border border-slate-200 bg-[#f8fafc] p-6 space-y-3 hover:border-slate-300 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 relative group"
               >
-                <div className="flex items-center justify-between border-b border-surface-border/60 pb-3">
-                  <span className="font-mono text-xs font-black text-brand-400 tracking-wider">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+                  <span className="font-mono text-xs font-black text-slate-900 tracking-wider">
                     {p.number}
                   </span>
-                  <span className="text-[10px] font-semibold text-steel-500 uppercase tracking-widest">
+                  <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
                     {p.tag}
                   </span>
                 </div>
-                <h3 className="font-bold text-white text-base pt-1">{p.title}</h3>
-                <p className="text-xs text-steel-400 leading-relaxed">{p.desc}</p>
+                <h3 className="font-bold text-slate-900 text-base pt-1">{p.title}</h3>
+                <p className="text-xs text-slate-600 leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -483,16 +478,16 @@ export default function LandingPage() {
       </section>
 
       {/* ── Testimonios con Carrusel de Tarjetas ── */}
-      <section id="testimonios" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-surface-border bg-surface/40">
+      <section id="testimonios" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 bg-slate-100/50">
         <div className="max-w-[1440px] mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider">
+            <span className="rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider shadow-2xs">
               Opiniones de Nuestros Clientes
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
               Lo que dicen en Santa Marta
             </h2>
-            <p className="text-xs sm:text-sm text-steel-400">
+            <p className="text-xs sm:text-sm text-slate-600">
               Reputación construida con honestidad, trato directo y cumplimiento en cada entrega.
             </p>
           </div>
@@ -501,30 +496,30 @@ export default function LandingPage() {
             {TESTIMONIALS.map((t, idx) => (
               <div
                 key={idx}
-                className="rounded-3xl border border-surface-border bg-surface-elevated p-6 space-y-4 shadow-xl flex flex-col justify-between hover:border-brand-500/40 hover:-translate-y-1 transition-all duration-300"
+                className="rounded-3xl border border-slate-200 bg-white p-6 space-y-4 shadow-sm flex flex-col justify-between hover:border-slate-300 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="space-y-3">
-                  <div className="flex items-center gap-1 text-amber-400">
+                  <div className="flex items-center gap-1 text-amber-500">
                     {[...Array(t.rating)].map((_, i) => (
                       <Star key={i} suppressHydrationWarning className="h-4 w-4 fill-amber-400" />
                     ))}
                   </div>
-                  <p className="text-xs sm:text-sm text-steel-300 leading-relaxed italic">
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed italic">
                     "{t.text}"
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-surface-border/60 flex items-center justify-between gap-3">
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-500/20 text-brand-400 font-black text-xs border border-brand-500/30">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-800 font-black text-xs border border-slate-200">
                       {t.avatar}
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-white">{t.name}</p>
-                      <p className="text-[10px] text-steel-400">{t.role}</p>
+                      <p className="text-xs font-bold text-slate-900">{t.name}</p>
+                      <p className="text-[10px] text-slate-500">{t.role}</p>
                     </div>
                   </div>
-                  <span className="font-mono text-[10px] font-bold text-brand-400 bg-brand-500/10 border border-brand-500/20 px-2 py-0.5 rounded-md shrink-0">
+                  <span className="font-mono text-[10px] font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-md shrink-0">
                     {t.vehicle}
                   </span>
                 </div>
@@ -536,7 +531,7 @@ export default function LandingPage() {
           <div className="text-center pt-4">
             <Link
               href="/agendar"
-              className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-brand-600 via-brand-500 to-red-600 px-8 py-4 text-sm font-black text-white shadow-xl shadow-brand-500/25 transition-all hover:scale-105 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-2xl bg-brand-600 hover:bg-brand-700 px-8 py-4 text-sm font-black text-white shadow-lg shadow-brand-600/20 transition-all hover:scale-105 active:scale-95"
             >
               <Calendar suppressHydrationWarning className="h-4 w-4" />
               <span>Únete a Nuestros Clientes Satisfechos</span>
@@ -549,16 +544,16 @@ export default function LandingPage() {
       <FaqSection />
 
       {/* ── Ubicación con Mapa Interactivo ── */}
-      <section id="ubicacion" className="py-20 px-4 sm:px-8 lg:px-12">
+      <section id="ubicacion" className="py-20 px-4 sm:px-8 lg:px-12 bg-[#f6f8fb]">
         <div className="max-w-[1440px] mx-auto space-y-8">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="rounded-full bg-brand-500/10 border border-brand-500/30 px-3.5 py-1 text-xs font-bold text-brand-400 uppercase tracking-wider">
+            <span className="rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider shadow-2xs">
               Dónde Estamos
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
               Visítanos en Santa Marta
             </h2>
-            <p className="text-xs sm:text-sm text-steel-400">
+            <p className="text-xs sm:text-sm text-slate-600">
               Ubicación de fácil acceso desde el Rodadero, Mamatoco, El Centro y vía Gaira.
             </p>
           </div>
@@ -569,7 +564,7 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
             <Link
               href="/agendar"
-              className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-brand-600 via-brand-500 to-red-600 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/25 hover:scale-105 transition-all active:scale-95"
+              className="flex items-center gap-2 rounded-2xl bg-brand-600 hover:bg-brand-700 px-8 py-4 text-sm font-bold text-white shadow-md shadow-brand-600/20 hover:scale-105 transition-all active:scale-95"
             >
               <Calendar suppressHydrationWarning className="h-4 w-4" />
               <span>Agendar Turno en el Taller</span>
@@ -579,7 +574,7 @@ export default function LandingPage() {
               href="https://wa.me/573025449422?text=Hola%20Renovautos,%20quiero%20agendar%20una%20revisión%20en%20el%20taller"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-2xl border border-[#25D366]/40 bg-[#25D366]/10 px-8 py-4 text-sm font-bold text-[#4ade80] hover:bg-[#25D366]/20 transition-all active:scale-95"
+              className="flex items-center gap-2 rounded-2xl border border-[#25D366]/60 bg-white hover:bg-[#25D366]/10 px-8 py-4 text-sm font-bold text-[#16a34a] hover:bg-[#25D366]/10 transition-all active:scale-95 shadow-xs"
             >
               <WhatsAppIcon className="h-4 w-4 fill-[#25D366]" />
               <span>Escribir por WhatsApp</span>
@@ -589,22 +584,22 @@ export default function LandingPage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="mt-auto border-t border-surface-border bg-[#07080a] py-12 px-4 sm:px-8 lg:px-12 text-xs text-steel-500">
+      <footer className="mt-auto border-t border-slate-800 bg-[#0f172a] py-12 px-4 sm:px-8 lg:px-12 text-xs text-slate-400">
         <div className="max-w-[1440px] mx-auto space-y-8">
           {/* Fila Superior */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {/* Marca */}
             <div className="space-y-4">
-              <Link href="/" className="inline-block">
+              <Link href="/" className="inline-block bg-white p-2 rounded-xl">
                 <Image
-                  src="/brand/logo-horizontal-dark.png"
+                  src="/brand/logo-horizontal-clean.png"
                   alt="Renovautos — Restauración Automotriz"
-                  width={220}
-                  height={50}
-                  className="h-10 w-auto object-contain"
+                  width={200}
+                  height={48}
+                  className="h-9 w-auto object-contain"
                 />
               </Link>
-              <p className="text-[11px] text-steel-400 leading-relaxed max-w-sm">
+              <p className="text-[11px] text-slate-400 leading-relaxed max-w-sm">
                 Restauración automotriz y mecánica de precisión en Santa Marta. Garantía certificada por escrito, seguimiento fotográfico en vivo y transparencia total.
               </p>
             </div>
@@ -630,20 +625,20 @@ export default function LandingPage() {
                   <span>+57 302 544 9422</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock suppressHydrationWarning className="h-3.5 w-3.5 text-brand-400 shrink-0" />
+                  <Clock suppressHydrationWarning className="h-3.5 w-3.5 text-slate-300 shrink-0" />
                   <span>Lun – Sáb: 8:00 AM – 6:00 PM</span>
                 </div>
               </div>
               <div className="flex gap-2 pt-1">
                 <Link
                   href="/agendar"
-                  className="rounded-xl bg-brand-600 px-3.5 py-2 text-[11px] font-bold text-white hover:bg-brand-500 transition-colors"
+                  className="rounded-xl bg-brand-600 px-3.5 py-2 text-[11px] font-bold text-white hover:bg-brand-700 transition-colors"
                 >
                   Agendar Cita
                 </Link>
                 <Link
                   href="/login"
-                  className="rounded-xl border border-surface-border px-3.5 py-2 text-[11px] font-bold text-steel-300 hover:border-brand-500 hover:text-brand-400 transition-colors"
+                  className="rounded-xl border border-slate-700 px-3.5 py-2 text-[11px] font-bold text-slate-300 hover:border-slate-500 hover:text-white transition-colors"
                 >
                   Portal Admin
                 </Link>
@@ -652,7 +647,7 @@ export default function LandingPage() {
           </div>
 
           {/* Fila Inferior */}
-          <div className="border-t border-surface-border/60 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] text-steel-600">
+          <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] text-slate-500">
             <p>© 2026 Renovautos. Todos los derechos reservados.</p>
             <p className="flex items-center gap-1.5">
               <span>Hecho con</span>
