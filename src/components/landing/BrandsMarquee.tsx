@@ -32,7 +32,7 @@ export default function BrandsMarquee() {
   const allBrands = [...BRANDS, ...BRANDS, ...BRANDS];
 
   return (
-    <div className="relative overflow-hidden w-full py-3">
+    <div className="relative overflow-hidden w-full py-4">
       {/* Sombras difuminadas en los extremos */}
       <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#f6f8fb] to-transparent z-10" />
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#f6f8fb] to-transparent z-10" />
@@ -42,7 +42,7 @@ export default function BrandsMarquee() {
         {allBrands.map((brand, idx) => (
           <div
             key={`${brand.name}-${idx}`}
-            className="group relative flex items-center justify-center rounded-2xl bg-white border border-slate-200/80 shadow-sm px-5 py-3 transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:scale-105"
+            className="group relative flex h-16 w-28 sm:w-32 items-center justify-center rounded-2xl bg-white border border-slate-200/80 shadow-sm px-4 py-3 transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:scale-105"
             title={brand.name}
           >
             <Image
@@ -50,7 +50,7 @@ export default function BrandsMarquee() {
               alt={`Logo ${brand.name}`}
               width={brand.width}
               height={brand.height}
-              className="h-9 w-auto object-contain transition-all duration-300"
+              className="max-h-9 w-auto object-contain transition-all duration-300"
               priority={idx < 11}
             />
           </div>

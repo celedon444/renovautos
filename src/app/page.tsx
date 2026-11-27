@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Renovautos — Restauración y Mecánica Automotriz en Santa Marta",
+  title: "Renovautos - Restauración Mecánica",
   description:
     "Restauración automotriz, mantenimiento preventivo, frenos, suspensión, diagnóstico computarizado y seguimiento en vivo por WhatsApp en Santa Marta, Colombia.",
 };
@@ -123,16 +123,12 @@ export default function LandingPage() {
           <div className="lg:col-span-6 space-y-6">
             <div className="space-y-4">
               <span className="inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 shadow-2xs">
-                <span className="h-2 w-2 rounded-full bg-brand-600" />
-                Restauración & Precisión Mecánica
+                Restauración y Precisión Mecánica
               </span>
 
               <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-slate-900 tracking-tight leading-[1.1]">
-                Tu auto en manos de{" "}
-                <span className="text-brand-600">
-                  quien sabe
-                </span>
-                {" "}y te mantiene informado
+                Tu auto en manos de quien sabe
+                y te mantiene informado
               </h1>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-xl">
@@ -199,7 +195,7 @@ export default function LandingPage() {
         </div>
 
         {/* Banda de Marcas con Marquesina Rotatoria Infinita */}
-        <div className="max-w-[1440px] mx-auto mt-16 relative z-10 space-y-4">
+        <div className="max-w-[1440px] mx-auto mt-16 pb-10 relative z-10 space-y-5">
           <p className="text-center text-xs text-slate-500 font-semibold uppercase tracking-widest">
             Atendemos todas las marcas de autos en Santa Marta
           </p>
@@ -609,7 +605,6 @@ export default function LandingPage() {
               <p className="font-bold text-white uppercase tracking-wider text-[11px]">Navegación</p>
               <div className="space-y-2 text-[11px]">
                 <a href="#servicios" className="block hover:text-white transition-colors">Servicios Especializados</a>
-                <a href="#seguimiento" className="block hover:text-white transition-colors">Portal de Seguimiento</a>
                 <a href="#testimonios" className="block hover:text-white transition-colors">Opiniones de Clientes</a>
                 <a href="#faq" className="block hover:text-white transition-colors">Preguntas Frecuentes</a>
                 <a href="#ubicacion" className="block hover:text-white transition-colors">Ubicación y Mapa</a>
@@ -648,12 +643,8 @@ export default function LandingPage() {
 
           {/* Fila Inferior */}
           <div className="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[10px] text-slate-500">
-            <p>© 2026 Renovautos. Todos los derechos reservados.</p>
-            <p className="flex items-center gap-1.5">
-              <span>Hecho con</span>
-              <Heart suppressHydrationWarning className="h-3 w-3 text-brand-500 fill-brand-500" />
-              <span>en Santa Marta, Colombia 🇨🇴</span>
-            </p>
+            <p>© 2026 Renovautos | Todos los derechos reservados.</p>
+            <p className="flex items-center gap-1.5"></p>
           </div>
         </div>
       </footer>
