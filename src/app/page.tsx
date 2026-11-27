@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Renovautos - Restauración Mecánica",
+  title: "Renovautos - Restauración Automotriz",
   description:
     "Restauración automotriz, mantenimiento preventivo, frenos, suspensión, diagnóstico computarizado y seguimiento en vivo por WhatsApp en Santa Marta, Colombia.",
 };
