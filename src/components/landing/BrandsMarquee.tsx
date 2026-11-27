@@ -32,7 +32,7 @@ export default function BrandsMarquee() {
   const allBrands = [...BRANDS, ...BRANDS, ...BRANDS];
 
   return (
-    <div className="relative overflow-hidden w-full py-4">
+    <div className="relative overflow-hidden w-full pt-12 pb-2">
       {/* Sombras difuminadas en los extremos */}
       <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#f6f8fb] to-transparent z-10" />
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#f6f8fb] to-transparent z-10" />

@@ -123,7 +123,7 @@ export default function LandingPage() {
           <div className="lg:col-span-6 space-y-6">
             <div className="space-y-4">
               <span className="inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white px-4 py-1.5 text-xs font-bold text-slate-700 shadow-2xs">
-                Restauración y Precisión Mecánica
+                RESTAURACIÓN Y PRECISIÓN MECÁNICA
               </span>
 
               <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-black text-slate-900 tracking-tight leading-[1.1]">
@@ -195,7 +195,7 @@ export default function LandingPage() {
         </div>
 
         {/* Banda de Marcas con Marquesina Rotatoria Infinita */}
-        <div className="max-w-[1440px] mx-auto mt-16 pb-10 relative z-10 space-y-5">
+        <div className="max-w-[1440px] mx-auto mt-16 pb-2 relative z-10 space-y-5">
           <p className="text-center text-xs text-slate-500 font-semibold uppercase tracking-widest">
             Atendemos todas las marcas de autos en Santa Marta
           </p>
@@ -206,8 +206,8 @@ export default function LandingPage() {
       {/* ── Catálogo de Servicios con Imágenes Automotrices ── */}
       <section id="servicios" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 bg-slate-100/50">
         <div className="max-w-[1440px] mx-auto space-y-12">
-          <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider shadow-2xs">
+          <div className="text-center space-y-5 max-w-2xl mx-auto">
+            <span className="inline-block mb-5 rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider">
               Servicios Especializados
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -287,9 +287,7 @@ export default function LandingPage() {
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
               Se acabaron las llamadas: <br />
-              <span className="text-brand-600">
-                "¿Cómo va mi carro?"
-              </span>
+              "¿Cómo va mi carro?"
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Cuando dejas tu vehículo en Renovautos, recibes un enlace exclusivo a tu WhatsApp para seguir cada etapa desde tu celular — sin contraseñas ni apps:
@@ -377,16 +375,14 @@ export default function LandingPage() {
                   {["Recibido", "Diagnóst.", "Cotizado", "Reparac.", "Listo"].map((step, i) => (
                     <div key={i} className="space-y-1.5">
                       <div
-                        className={`h-1.5 w-full rounded-full transition-all ${
-                          i < 4
-                            ? "bg-emerald-500"
-                            : "bg-brand-600 shadow-xs"
-                        }`}
+                        className={`h-1.5 w-full rounded-full transition-all ${i < 4
+                          ? "bg-emerald-500"
+                          : "bg-brand-600 shadow-xs"
+                          }`}
                       />
                       <p
-                        className={`text-[10px] text-center font-bold truncate ${
-                          i === 4 ? "text-brand-600 font-extrabold" : "text-slate-500"
-                        }`}
+                        className={`text-[10px] text-center font-bold truncate ${i === 4 ? "text-brand-600 font-extrabold" : "text-slate-500"
+                          }`}
                       >
                         {step}
                       </p>
@@ -415,7 +411,7 @@ export default function LandingPage() {
       <section id="por-que-nosotros" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 bg-white">
         <div className="max-w-[1440px] mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="rounded-full bg-slate-100 border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider inline-block">
+            <span className="rounded-full bg-slate-100 border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider inline-block mb-5">
               Nuestra Promesa de Servicio
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -477,7 +473,7 @@ export default function LandingPage() {
       <section id="testimonios" className="py-20 px-4 sm:px-8 lg:px-12 border-b border-slate-200/80 bg-slate-100/50">
         <div className="max-w-[1440px] mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider shadow-2xs">
+            <span className="inline-block mb-5 rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider shadow-2xs">
               Opiniones de Nuestros Clientes
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
@@ -543,8 +539,8 @@ export default function LandingPage() {
       <section id="ubicacion" className="py-20 px-4 sm:px-8 lg:px-12 bg-[#f6f8fb]">
         <div className="max-w-[1440px] mx-auto space-y-8">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <span className="rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider shadow-2xs">
-              Dónde Estamos
+            <span className="inline-block mb-5 rounded-full bg-white border border-slate-200 px-3.5 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider shadow-2xs">
+              ¿Dónde Estamos?
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
               Visítanos en Santa Marta
@@ -621,7 +617,7 @@ export default function LandingPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock suppressHydrationWarning className="h-3.5 w-3.5 text-slate-300 shrink-0" />
-                  <span>Lun – Sáb: 8:00 AM – 6:00 PM</span>
+                  <span>Lun – Dom: 8:00 AM – 6:00 PM</span>
                 </div>
               </div>
               <div className="flex gap-2 pt-1">

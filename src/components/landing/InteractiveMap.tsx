@@ -77,7 +77,7 @@ export default function InteractiveMap() {
             <span>Kilmer Primiento</span>
           </div>
           <p className="font-bold text-slate-900 text-sm">+57 302 544 9422</p>
-          <p className="text-slate-500 text-[11px]">Mecánico y propietario del taller</p>
+          <p className="text-slate-500 text-[11px]">Mecánico y Propietario</p>
         </div>
       </div>
     </div>
