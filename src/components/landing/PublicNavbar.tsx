@@ -34,7 +34,7 @@ export default function PublicNavbar() {
           <div className="flex items-center gap-3.5 flex-wrap justify-center sm:justify-start">
             <span className="inline-flex items-center gap-1.5 text-white font-bold">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              Renovautos Abierto en Santa Marta · Lun a Sáb: 8:00 AM - 6:00 PM
+              Renovautos abierto en Santa Marta · Lun a Dom: 8:00 AM - 6:00 PM
             </span>
             <span className="hidden md:inline-flex items-center gap-1 text-slate-400">
               <MapPin suppressHydrationWarning className="h-3 w-3 text-brand-400" />
@@ -56,7 +56,7 @@ export default function PublicNavbar() {
               href="/login"
               className="text-slate-300 hover:text-white transition-colors font-semibold"
             >
-              Acceso Admin
+              Portal Admin
             </Link>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function PublicNavbar() {
               Servicios
             </a>
             <a href="#seguimiento" className="hover:text-brand-600 transition-colors">
-              Seguimiento en Vivo
+              Seguimiento en vivo
             </a>
             <a href="#por-que-nosotros" className="hover:text-brand-600 transition-colors">
               Garantía
@@ -102,7 +102,7 @@ export default function PublicNavbar() {
               Opiniones
             </a>
             <a href="#ubicacion" className="hover:text-brand-600 transition-colors">
-              Ubicación & Mapa
+              Ubicación
             </a>
           </nav>
 

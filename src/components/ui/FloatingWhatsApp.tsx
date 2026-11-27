@@ -28,7 +28,7 @@ export default function FloatingWhatsApp({
           <WhatsAppIcon className="relative h-6 w-6 fill-white" />
         </span>
         <span className="hidden sm:inline-block text-xs font-black tracking-wide">
-          ¿Dudas? Chatea al WhatsApp
+          ¿Necesitas ayuda?
         </span>
       </a>
     </aside>

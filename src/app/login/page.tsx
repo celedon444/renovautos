@@ -6,7 +6,7 @@ import LoginForm from "@/components/auth/LoginForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Acceso Administrativo | Renovautos",
+  title: "Login",
 };
 
 export default function LoginPage() {

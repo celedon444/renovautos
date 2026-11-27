@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Renovautos — Restauración y Mecánica Automotriz en Santa Marta",
+    default: "Renovautos - Restauración Mecánica",
     template: "%s | Renovautos",
   },
   description:
